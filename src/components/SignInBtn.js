@@ -13,7 +13,6 @@ export default function SignInBtn() {
     return (
         <div>
             <button style={btnStyle}>Sign In With Google</button>
-            hello
         </div>
     )
 }
