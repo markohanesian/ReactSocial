@@ -1,10 +1,14 @@
 import React from 'react'
-import SignInBtn from "./SignInBtn"
+import NavBar from "./NavBar"
+
+const homeStyle = {
+    height: '100vh'
+}
 
 export default function home() {
     return (
-        <div>
-            <SignInBtn />
+        <div style={homeStyle}>
+            <NavBar />
         </div>
     )
 }

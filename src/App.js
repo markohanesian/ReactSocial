@@ -1,9 +1,15 @@
 import './App.css';
+// pages
+import Home from "./components/home";
+
+const appStyle = {
+  backgroundColor: 'whitesmoke'
+}
 
 function App() {
   return (
-    <div className="App">
-     <p>Mark's React Social Media App (coming Soon)</p>
+    <div style={appStyle}>
+      <Home />
     </div>
   );
 }
