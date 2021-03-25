@@ -9,7 +9,7 @@ const CreatePostStyle = {
 }
 
 const PromptStyle = {
-    paddingLeft: '1rem'
+    marginLeft: '1rem'
 }
 
 export default function CreatePost() {
