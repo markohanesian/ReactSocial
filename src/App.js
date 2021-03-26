@@ -1,6 +1,7 @@
 import './App.css';
 // pages
 import Home from "./components/home";
+import { UserContextProvider } from './contexts/user';
 
 const appStyle = {
   backgroundColor: 'whitesmoke'
@@ -8,9 +9,11 @@ const appStyle = {
 
 function App() {
   return (
-    <div style={appStyle}>
-      <Home />
-    </div>
+    <UserContextProvider>
+      <div style={appStyle}>
+        <Home />
+      </div>
+    </UserContextProvider>
   );
 }
 
