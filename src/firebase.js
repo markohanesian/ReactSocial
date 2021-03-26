@@ -10,7 +10,6 @@ import firebase from 'firebase';
   appId: "1:267213391628:web:a17b05c10a4cd2b9192b29"
 };
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 
@@ -19,4 +18,4 @@ const auth = firebase.auth();
 const storage = firebase.storage();
 const provider = new firebase.auth.GoogleAuthProvider();
 
-export { db, auth, storage, provider };
+export {db, auth, storage, provider};
