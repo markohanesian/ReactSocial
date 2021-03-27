@@ -41,15 +41,26 @@ const CreatePostPhotoIcon = {
 // hidden default upload button 
 const CreatePostUploadButton = {
     display: "none"
+
 }
 
+// Upload text button
+const UploadButton = {
+    border: "none",
+    backgroundColor: "white",
+    outline: "none"
 
+}
 
 export default function CreatePost() {
     const [user, setUser] = useContext(UserContext).user;
     const [caption, setCaption] = useState("");
     // choose file button function
     const handleChange = () => {
+
+    }
+
+    const handleUpload = () => {
 
     }
     return (
@@ -74,6 +85,9 @@ export default function CreatePost() {
                         </label>
                         <input style={CreatePostUploadButton} id="file-input" type="file" accept="image/*" onChange={handleChange} />
                     </div>
+                    <button style={{    color: caption ? "black" : "whitesmoke", outline: "none", border: "none", backgroundColor: "white"}} onClick={handleUpload}>
+                        Upload
+                    </button>
                 </div> 
             ) :
                 (<div>
