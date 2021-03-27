@@ -10,6 +10,8 @@ const CreatePostStyle = {
     alignItems: 'center',
     justifyContent: 'center',
     padding: '2rem',
+    backgroundColor: 'white',
+    margin: '2rem'
 }
 
 // Sub-div containing text and other elements
@@ -24,7 +26,12 @@ const PromptStyle = {
 
 // User post textarea
 const CreatePostTextArea = {
+}
 
+// Bottom bar section
+const CreatePostBottomBar = {
+    display: 'flex',
+    justifyContent: 'space-between',
 }
 
 // upload image areaa
@@ -79,6 +86,7 @@ export default function CreatePost() {
                         >
                         </textarea>
                     </div>
+                    <section style={CreatePostBottomBar}>
                     <div style={CreatePostUploadImage}>
                         <label htmlFor="file-input">
                             <AddAPhotoIcon  style={CreatePostPhotoIcon}/>
@@ -88,6 +96,7 @@ export default function CreatePost() {
                     <button style={{    color: caption ? "black" : "whitesmoke", outline: "none", border: "none", backgroundColor: "white"}} onClick={handleUpload}>
                         Upload
                     </button>
+                    </section>
                 </div> 
             ) :
                 (<div>
