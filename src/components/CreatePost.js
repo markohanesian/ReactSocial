@@ -1,6 +1,8 @@
 import React, { useContext, useState } from 'react'
 import { UserContext } from '../contexts/user'
 import SignInBtn from "./SignInBtn"
+// icon for photo upload button
+import AddAPhotoIcon from '@material-ui/icons/AddAPhoto';
 
 // topmost div
 const CreatePostStyle = {
@@ -30,12 +32,25 @@ const CreatePostUploadImage = {
 
 }
 
+// upload image icon
+const CreatePostPhotoIcon = {
+    cursor: "pointer",
+    fontSize: "2rem"
+}
+
+// hidden default upload button 
+const CreatePostUploadButton = {
+    display: "none"
+}
+
+
 
 export default function CreatePost() {
     const [user, setUser] = useContext(UserContext).user;
     const [caption, setCaption] = useState("");
+    // choose file button function
     const handleChange = () => {
-        
+
     }
     return (
         <div style={CreatePostStyle}>
@@ -54,9 +69,12 @@ export default function CreatePost() {
                         </textarea>
                     </div>
                     <div style={CreatePostUploadImage}>
-                        <input type="file" accept="image/*" onChange={handleChange} />
+                        <label htmlFor="file-input">
+                            <AddAPhotoIcon  style={CreatePostPhotoIcon}/>
+                        </label>
+                        <input style={CreatePostUploadButton} id="file-input" type="file" accept="image/*" onChange={handleChange} />
                     </div>
-                </div>
+                </div> 
             ) :
                 (<div>
                     <SignInBtn />
