@@ -11,7 +11,9 @@ const CreatePostStyle = {
     justifyContent: 'center',
     padding: '2rem',
     backgroundColor: 'white',
-    margin: '2rem'
+    margin: '2rem',
+    width: "100%",
+    maxWidth: "650px",
 }
 
 // Sub-div containing text and other elements
@@ -24,8 +26,14 @@ const PromptStyle = {
     marginLeft: '1rem'
 }
 
+const CreatePostInput = {
+    resize: 'none',
+    
+}
+
 // User post textarea
 const CreatePostTextArea = {
+    
 }
 
 // Bottom bar section
@@ -80,6 +88,7 @@ export default function CreatePost() {
                     <p style={PromptStyle}>Create Post</p>
                     <div style={CreatePostTextArea}>
                         <textarea
+                            style={CreatePostInput}
                             rows="3"
                             value={caption}
                             onChange={((e) => setCaption(e.target.value))}
