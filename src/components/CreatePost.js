@@ -28,12 +28,17 @@ const PromptStyle = {
 
 const CreatePostInput = {
     resize: 'none',
-    
+
 }
 
 // User post textarea
 const CreatePostTextArea = {
     
+}
+
+// image preview styling
+const CreatePostImagePreview = {
+
 }
 
 // Bottom bar section
@@ -50,7 +55,8 @@ const CreatePostUploadImage = {
 // upload image icon
 const CreatePostPhotoIcon = {
     cursor: "pointer",
-    fontSize: "2rem"
+    fontSize: "2rem",
+    height: "120px"
 }
 
 // hidden default upload button 
@@ -70,9 +76,19 @@ const UploadButton = {
 export default function CreatePost() {
     const [user, setUser] = useContext(UserContext).user;
     const [caption, setCaption] = useState("");
+    const [image, setimage] = useState(null)
     // choose file button function
-    const handleChange = () => {
+    const handleChange = (e) => {
+        if (e.target.files[0]) {
+            // setImage(e.target.files[0]);
 
+            var selectedImageSrc = URL.createObjectURL(e.target.files[0]);
+
+            var imagePreview = document.getElementById("image-preview");
+
+            imagePreview.src = selectedImageSrc;
+            imagePreview.style.display = "block"
+        }
     }
 
     const handleUpload = () => {
@@ -90,10 +106,14 @@ export default function CreatePost() {
                         <textarea
                             style={CreatePostInput}
                             rows="3"
+                            placeholder="enter caption here..."
                             value={caption}
                             onChange={((e) => setCaption(e.target.value))}
                         >
                         </textarea>
+                        <div style={CreatePostImagePreview}>
+                            <img style={CreatePostPhotoIcon} id="image-preview" alt=""/>
+                        </div>
                     </div>
                     <section style={CreatePostBottomBar}>
                     <div style={CreatePostUploadImage}>
