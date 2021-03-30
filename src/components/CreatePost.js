@@ -3,7 +3,8 @@ import { UserContext } from '../contexts/user'
 import SignInBtn from "./SignInBtn"
 // icon for photo upload button
 import AddAPhotoIcon from '@material-ui/icons/AddAPhoto';
-import { storage } from '../firebase';
+import firebase from "firebase";
+import { db, storage } from '../firebase';
 import makeId from './helper/functions';
 // topmost div
 const CreatePostStyle = {
@@ -107,6 +108,20 @@ export default function CreatePost() {
                 setProgress(progress);
             }, (error) => {
                 console.log(error);
+            }, () => {
+                // get download url and upload the post info
+                storage.ref("images").child(`${imageName}.jpg`)
+                    .getDownloadURL()
+                    .then((imageUrl) => {
+                        db.collection("posts").add({
+                            timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+                            caption: caption,
+                            photoUrl: imageUrl,
+                            // makes username from email signed in with google without "@gmail.com"
+                            username: user.email.replace("@gmail.com", ""),
+                            avatar: user.avatar
+                        });
+                    })
             });
         }
     };
