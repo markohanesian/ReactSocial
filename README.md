@@ -2,7 +2,7 @@
 ![Git Good Website Image](/public/pexels-photo-607812.jpeg)
 
 ## Links
-* [Link to site]()
+* [coming soon]()
 
 ## Description
 a social media app like instagram or fb with React.js and Firebase.
