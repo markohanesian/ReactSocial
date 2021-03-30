@@ -3,7 +3,8 @@ import { UserContext } from '../contexts/user'
 import SignInBtn from "./SignInBtn"
 // icon for photo upload button
 import AddAPhotoIcon from '@material-ui/icons/AddAPhoto';
-
+import { storage } from '../firebase';
+import makeId from './helper/functions';
 // topmost div
 const CreatePostStyle = {
     display: 'flex',
@@ -76,7 +77,8 @@ const UploadButton = {
 export default function CreatePost() {
     const [user, setUser] = useContext(UserContext).user;
     const [caption, setCaption] = useState("");
-    const [image, setimage] = useState(null)
+    const [image, setimage] = useState(null);
+    const [progress, setProgress] = useState(0);
     // choose file button function
     const handleChange = (e) => {
         if (e.target.files[0]) {
@@ -91,9 +93,24 @@ export default function CreatePost() {
         }
     }
 
+    // function for uploading images, creating storage ID, progress, error handling
     const handleUpload = () => {
+        if (image) {
+            // variable imported from functions.js
+            var imageName = makeId(10);
+            // image storage location
+            const uploadTask = storage.ref(`images/${imageName}.jpg`).put(image);
+            // will give update when task is completed
+            uploadTask.on("state_changed", (snapshot) => {
+                // progress function with percentage
+                const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+                setProgress(progress);
+            }, (error) => {
+                console.log(error);
+            });
+        }
+    };
 
-    }
     return (
         <div style={CreatePostStyle}>
 
