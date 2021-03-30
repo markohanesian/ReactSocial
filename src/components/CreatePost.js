@@ -68,22 +68,22 @@ const CreatePostUploadButton = {
 }
 
 // Upload text button
-const UploadButton = {
-    border: "none",
-    backgroundColor: "white",
-    outline: "none"
+// const UploadButton = {
+//     border: "none",
+//     backgroundColor: "white",
+//     outline: "none"
 
-}
+// }
 
 export default function CreatePost() {
     const [user, setUser] = useContext(UserContext).user;
     const [caption, setCaption] = useState("");
-    const [image, setimage] = useState(null);
+    const [image, setImage] = useState(null);
     const [progress, setProgress] = useState(0);
     // choose file button function
     const handleChange = (e) => {
         if (e.target.files[0]) {
-            // setImage(e.target.files[0]);
+            setImage(e.target.files[0]);
 
             var selectedImageSrc = URL.createObjectURL(e.target.files[0]);
 
@@ -154,8 +154,8 @@ export default function CreatePost() {
                         </label>
                         <input style={CreatePostUploadButton} id="file-input" type="file" accept="image/*" onChange={handleChange} />
                     </div>
-                    <button style={{    color: caption ? "black" : "whitesmoke", outline: "none", border: "none", backgroundColor: "white"}} onClick={handleUpload}>
-                        Upload
+                    <button style={{color: caption ? "black" : "whitesmoke", border: "none", backgroundColor: "white"}} onClick={handleUpload}>
+                        {`Upload ${progress !== 0 ? progress : ""}`}
                     </button>
                     </section>
                 </div> 
