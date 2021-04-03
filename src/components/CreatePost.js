@@ -122,8 +122,12 @@ export default function CreatePost() {
                             avatar: user.avatar
                         });
                     })
+                // after user posts, remove caption, progress percentage, and image
+                setCaption("");
+                setProgress(0);
+                setImage(null);
             });
-        }
+        } 
     };
 
     return (
