@@ -126,6 +126,9 @@ export default function CreatePost() {
                 setCaption("");
                 setProgress(0);
                 setImage(null);
+
+                // hides image preview after uploading
+                document.getElementById("image-preview").style.display = "none";
             });
         } 
     };
@@ -148,7 +151,7 @@ export default function CreatePost() {
                         >
                         </textarea>
                         <div style={CreatePostImagePreview}>
-                            <img style={CreatePostPhotoIcon} id="image-preview" alt=""/>
+                            <img style={CreatePostPhotoIcon} id="image-preview" alt="preview"/>
                         </div>
                     </div>
                     <section style={CreatePostBottomBar}>
