@@ -1,5 +1,7 @@
 import React from 'react';
 import Comment from './comment';
+import CommentInput from './CommentInput'
+import { db, storage } from '../firebase';
 
 const PostStyle = {
     padding: '1rem',
@@ -65,27 +67,50 @@ const PostTextCaption = {
 
 }
 
-export default function Post({ profileUrl, username, id, photoURL, caption, comments }) {
+export default function Post({ avatar, username, id, uploadURL, caption, comments }) {
+
+    const deletePost = () => {
+        // delete image from Firebase store
+        
+        // get reference to the image file I want to delete
+        
+        var imageRef = storage.refFromURL(uploadURL);
+
+        // delete the file
+        imageRef.delete().then(function () {
+            console.log("delete successful")
+        }).catch(function(error) {
+            console.log(`Error ${error}`);
+        });
+
+        // delete post info from Firestore
+        db.collection("posts").doc(id).delete().then(function () {
+            console.log("delete post successful")
+        }).catch(function (error) {
+            console.log(`Error post info delete ${error}`);
+        });
+    }
+
     return (
         // header portion of post
         <div style={PostStyle}>
             <div style={PostHeader}>
                 <div style={PostHeaderLeft}>
-                    <img src={profileUrl} style={PostProfilePic} alt="user avatar" />
+                    <img src={avatar} style={PostProfilePic} alt="user avatar" />
                     <p style={PostUserName}>{username}</p>
                 </div>
-                <button style={PostDeleteBtn}>Delete</button>
+                <button style={PostDeleteBtn} onClick={deletePost}>Delete</button>
             </div>
             {/* image portion of post */}
             <div style={PostCenter}>
-                <img src={photoURL} alt="" style={PostPhotoUrl} />
+                <img src={uploadURL} alt="" style={PostPhotoUrl} />
             </div>
             {/* text portion of post */}
             <div style={PostText}>
                 <p style={PostTextUser}>{username}</p>
                 <p style={PostTextCaption}>{caption}</p>
             </div>
-
+            <CommentInput id={id} />
             {/* if there are comments, show, if not, show nothing */}
             {comments ? comments.map((comment) => <Comment username={comment.username} caption={comment.caption} />) : <></>}
             
