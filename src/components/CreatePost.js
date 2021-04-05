@@ -116,7 +116,7 @@ export default function CreatePost() {
                         db.collection("posts").add({
                             timestamp: firebase.firestore.FieldValue.serverTimestamp(),
                             caption: caption,
-                            photoUrl: imageUrl,
+                            uploadURL: imageUrl,
                             // makes username from email signed in with google without "@gmail.com"
                             username: user.email.replace("@gmail.com", ""),
                             avatar: user.photoURL
