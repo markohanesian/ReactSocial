@@ -6,7 +6,7 @@
 /* font imports */
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300&family=Roboto:wght@300&display=swap');
 
-button {
+button, input, textarea {
   font-family: 'Roboto', sans-serif;;
 }
 
