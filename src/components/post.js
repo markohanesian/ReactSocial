@@ -55,12 +55,13 @@ const PostPhotoUrl = {
 // div containing username, caption
 const PostText = {
     display: 'flex',
-    flexDirection: 'row'
+    flexDirection: 'row',
+    marginBottom: '2rem'
 }
 
 const PostTextUser = {
     fontWeight: '600',
-    marginRight: '1rem'
+    marginRight: '1rem',
 }
 
 const PostTextCaption = {
