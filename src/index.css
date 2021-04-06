@@ -3,20 +3,34 @@
   margin: 0px;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+/* font imports */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300&family=Roboto:wght@300&display=swap');
 
 button {
-  font-family: 'Poppins', sans-serif;;
+  font-family: 'Roboto', sans-serif;;
 }
 
 body {
   margin: 0;
-  font-family:  sans-serif;;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+h1 {
+  font-family: 'Cairo', serif;
+}
+
+h2 {
+  font-family: 'Cairo', serif;
 }
