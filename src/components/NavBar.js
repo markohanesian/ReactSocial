@@ -24,7 +24,7 @@ export default function NavBar() {
 
     return (
         <div style={navStyle}>
-            <p>ReactSocial</p>
+            <h1>ReactSocial</h1>
             {/* if user is signed in, display avatar in navbar */}
             {user ? <img alt={"avatar"} style={NavbarImgStyle} src={user.photoURL} />: <SignInBtn />}
         </div>
