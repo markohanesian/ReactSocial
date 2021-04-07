@@ -32,7 +32,8 @@ export default function Feed() {
                   avatar={post.avatar}
                   username = {post.username}
                   uploadURL={post.uploadURL}
-                  caption={post.caption}
+                caption={post.caption}
+                comments={post.comments}
               />
               
 
