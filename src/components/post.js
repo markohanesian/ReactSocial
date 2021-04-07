@@ -111,9 +111,13 @@ export default function Post({ avatar, username, id, uploadURL, caption, comment
                 <p style={PostTextUser}>{username}</p>
                 <p style={PostTextCaption}>{caption}</p>
             </div>
-            <CommentInput id={id} />
+            <CommentInput
+                // referencing firestore comments fields
+                id={id}
+                comments={comments}
+            />
             {/* if there are comments, show, if not, show nothing */}
-            {comments ? comments.map((comment) => <Comment username={comment.username} caption={comment.caption} />) : <></>}
+            {comments ? comments.map((comment) => <Comment username={comment.username} caption={comment.comment} />) : <></>}
             
         </div>
     )
