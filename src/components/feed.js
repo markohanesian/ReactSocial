@@ -2,7 +2,12 @@ import React, { useState, useEffect } from "react";
 import Post from "./post";
 import { db } from '../firebase';
 
-const FeedStyle = {};
+const FeedStyle = {
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  backgroundColor: 'whitesmoke'
+};
 
 export default function Feed() {
   const [posts, setPosts] = useState([]);
