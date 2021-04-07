@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Comment from './comment';
 import CommentInput from './CommentInput'
 import { db, storage } from '../firebase';
+import { UserContext } from '../contexts/user';
 
 const PostStyle = {
     padding: '1rem',
@@ -69,7 +70,7 @@ const PostTextCaption = {
 }
 
 export default function Post({ avatar, username, id, uploadURL, caption, comments }) {
-
+    const [user, setUser] = useContext(UserContext).user
     const deletePost = () => {
         // delete image from Firebase store
         
@@ -111,13 +112,13 @@ export default function Post({ avatar, username, id, uploadURL, caption, comment
                 <p style={PostTextUser}>{username}</p>
                 <p style={PostTextCaption}>{caption}</p>
             </div>
-            <CommentInput
-                // referencing firestore comments fields
+            {/* display CommentInput only when user signed in */}
+            {user ? <CommentInput
                 id={id}
-                comments={comments}
-            />
+                comments={comments} /> : <></>}
             {/* if there are comments, show, if not, show nothing */}
             {comments ? comments.map((comment) => <Comment username={comment.username} caption={comment.comment} />) : <></>}
+            
             
         </div>
     )
