@@ -5,15 +5,20 @@ import { db } from '../firebase';
 const CommentInputStyle = {
     display: 'flex',
     justifyContent: 'space-between',
-    marginLeft: '1rem'
+    alignItems: 'center',
+    marginLeft: '1rem',
+    marginBottom: '2rem'
 }
 
 const CommentInputTextarea = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
     border: 'none',
     width: '100%',
     resize: 'none',
     backgroundColor: 'whitesmoke',
-    padding: '1rem'
+    padding: '1rem',
 }
 
 const CommentPostBtn = {

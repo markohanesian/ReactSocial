@@ -2,7 +2,9 @@ import React from 'react'
 
 const CommentStyle = {
     display: 'flex',
-    flexDirection: 'row'
+    flexDirection: 'row',
+    marginLeft: '3rem',
+    padding: '1rem'
 }
 
 const CommentUser = {

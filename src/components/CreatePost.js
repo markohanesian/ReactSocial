@@ -20,23 +20,33 @@ const CreatePostStyle = {
 
 // Sub-div containing text and other elements
 const CreatePostContainer = {
-
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
 }
 
 // "Create a Post"
 const PromptStyle = {
-    marginLeft: '1rem'
+    marginBottom: '1rem'
 }
 
+// User post div
+const CreatePostTextArea = {
+}
+
+// text box where user writes post
 const CreatePostInput = {
     resize: 'none',
+    border: 'none'
 
 }
 
-// User post textarea
-const CreatePostTextArea = {
-    
+// separating line
+const CreatePostLine = {
+    margin: '1rem 1rem',
+    style: 'solid'
 }
+
 
 // image preview styling
 const CreatePostImagePreview = {
@@ -145,11 +155,12 @@ export default function CreatePost() {
                         <textarea
                             style={CreatePostInput}
                             rows="3"
-                            placeholder="enter caption here..."
+                            placeholder="Write something about the image you are posting"
                             value={caption}
                             onChange={((e) => setCaption(e.target.value))}
                         >
                         </textarea>
+                        <hr style={CreatePostLine}></hr>
                         <div style={CreatePostImagePreview}>
                             <img style={CreatePostPhotoIcon} id="image-preview" alt="preview"/>
                         </div>
