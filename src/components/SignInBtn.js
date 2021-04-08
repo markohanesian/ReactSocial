@@ -7,6 +7,7 @@ const btnStyle = {
     color: 'white',
     border: 'none',
     padding: '5px',
+    marginRight: '1rem'
 
     // backgroundImage: 'url(' + imgUrl + ')',
   };

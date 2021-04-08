@@ -6,14 +6,20 @@ const navStyle = {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: '12px 24px',
-    backgroundColor: 'white'
+    width: '100%',
+    backgroundColor: 'white',
+    padding: ".5rem 0 .5rem 0"
+}
+
+const LogoStyle = {
+    paddingLeft: '1rem'
 }
 
 const NavbarImgStyle = {
     height: '40px',
     width: '40px',
-    borderRadius: '50%'
+    borderRadius: '50%',
+    marginRight: '1rem'
 }
 
 export default function NavBar() {
@@ -24,7 +30,7 @@ export default function NavBar() {
 
     return (
         <div style={navStyle}>
-            <h1>ReactSocial</h1>
+            <h1 style={LogoStyle}>ReactSocial</h1>
             {/* if user is signed in, display avatar in navbar */}
             {user ? <img alt={"avatar"} style={NavbarImgStyle} src={user.photoURL} />: <SignInBtn />}
         </div>

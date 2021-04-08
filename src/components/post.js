@@ -8,8 +8,8 @@ const PostStyle = {
     padding: '1rem',
     margin: '2rem',
     backgroundColor: 'white',
-    width: "90vw",
-    maxWidth: "600px",
+    width: '90vw',
+    maxWidth: '600px'
 }
 
 const PostHeader = {

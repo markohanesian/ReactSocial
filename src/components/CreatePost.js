@@ -9,10 +9,12 @@ import makeId from './helper/functions';
 // topmost div
 const CreatePostStyle = {
     display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
     justifyContent: 'center',
-    padding: '2rem',
+    alignItems: 'center',
+    padding: '1rem',
+    margin: '2rem',
+    width: '100vw',
+    maxWidth: '600px',
     backgroundColor: 'white',
 }
 
@@ -24,27 +26,24 @@ const CreatePostContainer = {
 }
 
 // "Create a Post"
-const PromptStyle = {
-    marginBottom: '1rem'
-}
+// const PromptStyle = {
+//     marginBottom: '5rem'
+// }
 
 // User post div
 const CreatePostTextArea = {
+
 }
 
 // text box where user writes post
 const CreatePostInput = {
+    display: 'flex',
+    backgroundColor: 'whitesmoke',
+    maxWidth: "600px",
+    width: '100vw',
     resize: 'none',
     border: 'none'
-
 }
-
-// separating line
-const CreatePostLine = {
-    margin: '1rem 1rem',
-    style: 'solid'
-}
-
 
 // image preview styling
 const CreatePostImagePreview = {
@@ -54,7 +53,10 @@ const CreatePostImagePreview = {
 // Bottom bar section
 const CreatePostBottomBar = {
     display: 'flex',
+    flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'flex-end',
+    textAlign: 'bottom'
 }
 
 // upload image areaa
@@ -66,7 +68,7 @@ const CreatePostUploadImage = {
 const CreatePostPhotoIcon = {
     cursor: "pointer",
     fontSize: "2rem",
-    height: "120px"
+    height: "120px",
 }
 
 // hidden default upload button 
@@ -74,14 +76,6 @@ const CreatePostUploadButton = {
     display: "none"
 
 }
-
-// Upload text button
-// const UploadButton = {
-//     border: "none",
-//     backgroundColor: "white",
-//     outline: "none"
-
-// }
 
 export default function CreatePost() {
     const [user, setUser] = useContext(UserContext).user;
@@ -138,7 +132,7 @@ export default function CreatePost() {
                 // hides image preview after uploading
                 document.getElementById("image-preview").style.display = "none";
             });
-        } 
+        }
     };
 
     return (
@@ -158,23 +152,22 @@ export default function CreatePost() {
                             onChange={((e) => setCaption(e.target.value))}
                         >
                         </textarea>
-                        <hr style={CreatePostLine}></hr>
                         <div style={CreatePostImagePreview}>
-                            <img style={CreatePostPhotoIcon} id="image-preview" alt="preview"/>
+                            <img style={CreatePostPhotoIcon} id="image-preview" alt="preview" />
                         </div>
                     </div>
                     <section style={CreatePostBottomBar}>
-                    <div style={CreatePostUploadImage}>
-                        <label htmlFor="file-input">
-                            <AddAPhotoIcon  style={CreatePostPhotoIcon}/>
-                        </label>
-                        <input style={CreatePostUploadButton} id="file-input" type="file" accept="image/*" onChange={handleChange} />
-                    </div>
-                    <button style={{color: caption ? "black" : "whitesmoke", border: "none", backgroundColor: "white"}} onClick={handleUpload}>
-                        {`Upload ${progress !== 0 ? progress : ""}`}
-                    </button>
+                        <div style={CreatePostUploadImage}>
+                            <label htmlFor="file-input">
+                                <AddAPhotoIcon style={CreatePostPhotoIcon} />
+                            </label>
+                            <input style={CreatePostUploadButton} id="file-input" type="file" accept="image/*" onChange={handleChange} />
+                        </div>
+                        <button style={{ color: caption ? "black" : "whitesmoke", border: "none", backgroundColor: "white" }} onClick={handleUpload}>
+                            {`Upload ${progress !== 0 ? progress : ""}`}
+                        </button>
                     </section>
-                </div> 
+                </div>
             ) :
                 (<div>
                     <SignInBtn />

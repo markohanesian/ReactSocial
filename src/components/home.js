@@ -5,7 +5,10 @@ import CreatePost from './CreatePost';
 import Feed from './feed';
 
 const homeStyle = {
-    height: '100vh'
+    display: 'flex',
+    height: '100vh',
+    flexDirection: 'column',
+    alignItems: 'center'
 }
 
 export default function home() {
