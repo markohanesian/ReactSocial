@@ -9,20 +9,18 @@ import makeId from './helper/functions';
 // topmost div
 const CreatePostStyle = {
     display: 'flex',
+    flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
     padding: '2rem',
     backgroundColor: 'white',
-    margin: '2rem',
-    width: "100%",
-    maxWidth: "650px",
 }
 
 // Sub-div containing text and other elements
 const CreatePostContainer = {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
+    // display: 'flex',
+    // flexDirection: 'column',
+    // alignItems: 'center',
 }
 
 // "Create a Post"
@@ -50,7 +48,7 @@ const CreatePostLine = {
 
 // image preview styling
 const CreatePostImagePreview = {
-
+    color: 'red',
 }
 
 // Bottom bar section
@@ -150,7 +148,7 @@ export default function CreatePost() {
             {user ? (
 
                 <div style={CreatePostContainer}>
-                    <p style={PromptStyle}>Create Post</p>
+                    {/* <p style={PromptStyle}>Create Post</p> */}
                     <div style={CreatePostTextArea}>
                         <textarea
                             style={CreatePostInput}
