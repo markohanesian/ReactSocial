@@ -18,8 +18,8 @@ Login and use!
 * Firebase
 
 ## Planned Features/Outstanding Issues
-* Authentication
-* Commenting
+* More ways to authenticate and sign in
+* User profile and settings 
 
 ## Authors
 * [Mark Ohanasian](https://github.com/markohanesian) 
