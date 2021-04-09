@@ -70,7 +70,7 @@ const PostTextCaption = {
 }
 
 export default function Post({ avatar, username, id, uploadURL, caption, comments }) {
-    const [user, setUser] = useContext(UserContext).user
+    const [user] = useContext(UserContext).user
     const deletePost = () => {
         // delete image from Firebase store
         

@@ -28,9 +28,9 @@ const CommentPostBtn = {
 }
 
 export default function CommentInput({ id, comments }) {
-    const [user, setUser] = useContext(UserContext).user;
+    const [user] = useContext(UserContext).user;
     const [comment, setComment] = useState("");
-    const [commentArray, setCommentArray] = useState(comments ? comments : []);
+    const [commentArray] = useState(comments ? comments : []);
     const addComment = () => {
         if (comments !== "") {
             // add comment to post info 

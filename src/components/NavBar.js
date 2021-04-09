@@ -24,7 +24,7 @@ const NavbarImgStyle = {
 
 export default function NavBar() {
 
-    const [user, setUser] = useContext(UserContext).user
+    const [user] = useContext(UserContext).user
 
 
 
