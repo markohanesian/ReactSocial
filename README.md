@@ -2,7 +2,7 @@
 ![Git Good Website Image](/public/pexels-photo-607812.jpeg)
 
 ## Links
-* [React Social](https://social-media-app-mso.netlify.app/)
+* [React Social](https://social-media-app-mso.web.app/)
 
 ## Description
 a social media app like instagram or fb with React.js and Firebase.
