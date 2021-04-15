@@ -16,6 +16,7 @@ Login and use!
 ## Built With
 * React
 * Firebase
+* Material-Ui
 
 ## Planned Features/Outstanding Issues
 * More ways to authenticate and sign in
@@ -25,7 +26,7 @@ Login and use!
 * [Mark Ohanasian](https://github.com/markohanesian) 
 
 ## Acknowledgments
-* [Sanskar Tiwari](https://www.youtube.com/channel/UCsPdgUIoOBTBI1UmulW1pdw) for the awesome tutorial
+* [Sanskar Tiwari](https://www.youtube.com/channel/UCsPdgUIoOBTBI1UmulW1pdw) for the awesome tutorial 
 
 ## License
 ![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
