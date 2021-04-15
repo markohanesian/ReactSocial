@@ -101,7 +101,7 @@ export default function Post({ avatar, username, id, uploadURL, caption, comment
                     <img src={avatar} style={PostProfilePic} alt="user avatar" />
                     <p style={PostUserName}>{username}</p>
                 </div>
-                <button style={PostDeleteBtn} onClick={deletePost}>Delete</button>
+                {user ? <button style={PostDeleteBtn} onClick={deletePost}>Delete</button> : <></>}
             </div>
             {/* image portion of post */}
             <div style={PostCenter}>
