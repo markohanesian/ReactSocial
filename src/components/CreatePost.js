@@ -153,7 +153,8 @@ export default function CreatePost() {
                         >
                         </textarea>
                         <div style={CreatePostImagePreview}>
-                            <img style={CreatePostPhotoIcon} id="image-preview" alt="preview" />
+                            {/* img styled inline so that it is hidden by default */}
+                            <img style={{display: 'none', height: '8rem'}} id="image-preview" alt="preview" />
                         </div>
                     </div>
                     <section style={CreatePostBottomBar}>
