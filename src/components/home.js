@@ -3,7 +3,6 @@ import React from 'react';
 import NavBar from './NavBar';
 import CreatePost from './CreatePost';
 import Feed from './feed';
-
 const homeStyle = {
     display: 'flex',
     height: '100vh',
