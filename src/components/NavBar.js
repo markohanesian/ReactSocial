@@ -12,7 +12,10 @@ const navStyle = {
 }
 
 const LogoStyle = {
-    paddingLeft: '1rem'
+    paddingLeft: '1rem',
+    fontSize: '1.5rem',
+    fontWeight: '800',
+    textDecoration: 'none'
 }
 
 const NavbarImgStyle = {
@@ -30,7 +33,7 @@ export default function NavBar() {
 
     return (
         <div style={navStyle}>
-            <h1 style={LogoStyle}>ReactSocial</h1>
+            <a href="/" style={LogoStyle}>ReactSocial</a>
             {/* if user is signed in, display avatar in navbar */}
             {user ? <img alt={"avatar"} style={NavbarImgStyle} src={user.photoURL} />: <SignInBtn />}
         </div>
