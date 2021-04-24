@@ -1,7 +1,9 @@
 import React, { useContext } from 'react'
 import { UserContext } from '../contexts/user'
 import SignInBtn from "./SignInBtn"
-
+import {
+Link
+  } from "react-router-dom";
 const navStyle = {
     display: 'flex',
     justifyContent: 'space-between',
@@ -46,8 +48,8 @@ export default function NavBar() {
     return (
         <div style={navStyle}>
             <div style={LinksDiv}>
-                <a href="/" style={LogoStyle}>ReactSocial</a>
-                <a href="/news" style={NewsStyle}>news</a>
+                <Link to="/" style={LogoStyle}>ReactSocial</Link>
+                <Link to="/news" style={NewsStyle}>news</Link>
             </div>
             {/* if user is signed in, display avatar in navbar */}
             {user ? <img alt={"avatar"} style={NavbarImgStyle} src={user.photoURL} /> : <SignInBtn />}
