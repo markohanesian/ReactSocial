@@ -6,7 +6,8 @@ const NewsItemContainer = {
     flexDirection: 'column',
     alignItems: 'flex-start',
     padding: '1rem',
-    marginBottom: '1.5rem'
+    marginBottom: '1.5rem',
+    backgroundColor: 'white'
 }
 
 const ImageStyle = {
