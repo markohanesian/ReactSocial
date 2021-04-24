@@ -11,11 +11,23 @@ const navStyle = {
     padding: ".5rem 0 .5rem 0"
 }
 
+// div left side containing home and news links
+const LinksDiv = {
+    
+}
+
 const LogoStyle = {
-    paddingLeft: '1rem',
+    padding: '0 1rem 0 1rem',
     fontSize: '1.5rem',
     fontWeight: '800',
-    textDecoration: 'none'
+    textDecoration: 'none',
+}
+
+const NewsStyle = {
+    padding: '0 1rem 0 1rem',
+    textDecoration: 'none',
+    fontSize: '1rem',
+    fontWeight: '800'
 }
 
 const NavbarImgStyle = {
@@ -33,9 +45,12 @@ export default function NavBar() {
 
     return (
         <div style={navStyle}>
-            <a href="/" style={LogoStyle}>ReactSocial</a>
+            <div style={LinksDiv}>
+                <a href="/" style={LogoStyle}>ReactSocial</a>
+                <a href="/news" style={NewsStyle}>news</a>
+            </div>
             {/* if user is signed in, display avatar in navbar */}
-            {user ? <img alt={"avatar"} style={NavbarImgStyle} src={user.photoURL} />: <SignInBtn />}
+            {user ? <img alt={"avatar"} style={NavbarImgStyle} src={user.photoURL} /> : <SignInBtn />}
         </div>
     )
 }
