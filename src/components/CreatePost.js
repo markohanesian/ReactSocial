@@ -147,7 +147,7 @@ export default function CreatePost() {
                         <textarea
                             style={CreatePostInput}
                             rows="3"
-                            placeholder="Write something about the image you are posting"
+                            placeholder="Add and image and write something to post to the feed..."
                             value={caption}
                             onChange={((e) => setCaption(e.target.value))}
                         >
