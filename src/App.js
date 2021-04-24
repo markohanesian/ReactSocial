@@ -1,20 +1,42 @@
 import './App.css';
+// router for page routing
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+import NavBar from './components/NavBar';
 // pages
 import Home from "./components/home";
+import NewsList from "./components/NewsList";
+// user
 import { UserContextProvider } from './contexts/user';
 
 const appStyle = {
-  backgroundColor: 'whitesmoke'
+  display: 'flex',
+  flexDirection: 'column'
 }
 
-function App() {
+export default function App() {
+
+
   return (
     <UserContextProvider>
-      <div style={appStyle}>
-        <Home />
-      </div>
+      <Router>
+        <div style={appStyle}>
+          <Switch>
+            <Route path="/news">
+              <NavBar />
+              <NewsList />
+            </Route>
+            <Route path="/">
+              <NavBar />
+              <Home />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
     </UserContextProvider>
   );
-}
+};
 
-export default App;
