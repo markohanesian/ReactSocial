@@ -8,13 +8,14 @@ import {
 import NavBar from './components/NavBar';
 // pages
 import Home from "./components/home";
-import NewsList from "./components/NewsList";
+import News from "./components/news";
 // user
 import { UserContextProvider } from './contexts/user';
 
 const appStyle = {
   display: 'flex',
-  flexDirection: 'column'
+  flexDirection: 'column',
+  backgroundColor: 'whitesmoke'
 }
 
 export default function App() {
@@ -27,7 +28,7 @@ export default function App() {
           <Switch>
             <Route path="/news">
               <NavBar />
-              <NewsList />
+              <News />
             </Route>
             <Route path="/">
               <NavBar />
