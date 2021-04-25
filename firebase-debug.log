@@ -1,0 +1,46 @@
+[debug] [2021-04-25T04:56:59.355Z] ----------------------------------------------------------------------
+[debug] [2021-04-25T04:56:59.356Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\mso87\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start
+[debug] [2021-04-25T04:56:59.357Z] CLI Version:   9.10.0
+[debug] [2021-04-25T04:56:59.357Z] Platform:      win32
+[debug] [2021-04-25T04:56:59.357Z] Node Version:  v14.15.0
+[debug] [2021-04-25T04:56:59.357Z] Time:          Sat Apr 24 2021 21:56:59 GMT-0700 (Pacific Daylight Time)
+[debug] [2021-04-25T04:56:59.358Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-04-25T04:56:59.359Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2021-04-25T04:56:59.376Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-04-25T04:56:59.376Z] > authorizing via signed-in user (mso872@gmail.com)
+[info] i  emulators: Starting emulators: hosting {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: hosting"}}
+[debug] [2021-04-25T04:56:59.393Z] [hub] writing locator at C:\Users\mso87\AppData\Local\Temp\hub-social-media-app-mso.json
+[debug] [2021-04-25T04:56:59.407Z] > refreshing access token with scopes: []
+[debug] [2021-04-25T04:56:59.407Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-04-25T04:56:59.561Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","date":"Sun, 25 Apr 2021 04:56:59 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-04-25T04:56:59.572Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/social-media-app-mso/webApps/-/config [none]
+[debug] [2021-04-25T04:56:59.596Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2021-04-25T04:56:59.596Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2021-04-25T04:57:00.067Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/social-media-app-mso/webApps/-/config 200
+[debug] [2021-04-25T04:57:00.067Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/social-media-app-mso/webApps/-/config {"projectId":"social-media-app-mso","appId":"1:267213391628:web:a17b05c10a4cd2b9192b29","databaseURL":"https://social-media-app-mso-default-rtdb.firebaseio.com","storageBucket":"social-media-app-mso.appspot.com","locationId":"us-central","apiKey":"AIzaSyCy49QJAEVPPURcw1wPnrR5yaF0Gu-GFlc","authDomain":"social-media-app-mso.firebaseapp.com","messagingSenderId":"267213391628"}
+[info] i  hosting: Serving hosting files from: build {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mbuild\u001b[22m"}}
+[info] +  hosting: Local server: http://localhost:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:5000\u001b[22m\u001b[24m"}}
+[warn] !  emulators: The Emulator UI requires a project ID to start. Configure your default project with 'firebase use' or pass the --project flag. {"metadata":{"emulator":{"name":"hub"},"message":"The Emulator UI requires a project ID to start. Configure your default project with 'firebase use' or pass the --project flag."}}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+└─────────────────────────────────────────────────────────────┘
+
+┌──────────┬────────────────┐
+│ Emulator │ Host:Port      │
+├──────────┼────────────────┤
+│ Hosting  │ localhost:5000 │
+└──────────┴────────────────┘
+  Emulator Hub running at localhost:4400
+  Other reserved ports: None
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[info] i  hosting: 127.0.0.1 - - [25/Apr/2021:04:57:15 +0000] "GET / HTTP/1.1" 200 3047 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [25/Apr/2021:04:57:15 +0000] \"GET / HTTP/1.1\" 200 3047 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [25/Apr/2021:04:57:15 +0000] "GET /static/css/main.f75acf19.chunk.css HTTP/1.1" 200 455 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [25/Apr/2021:04:57:15 +0000] \"GET /static/css/main.f75acf19.chunk.css HTTP/1.1\" 200 455 \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [25/Apr/2021:04:57:15 +0000] "GET /static/js/2.a3f4daf9.chunk.js HTTP/1.1" 200 1047570 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [25/Apr/2021:04:57:15 +0000] \"GET /static/js/2.a3f4daf9.chunk.js HTTP/1.1\" 200 1047570 \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [25/Apr/2021:04:57:15 +0000] "GET /static/js/main.7b765d7b.chunk.js HTTP/1.1" 200 8895 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [25/Apr/2021:04:57:15 +0000] \"GET /static/js/main.7b765d7b.chunk.js HTTP/1.1\" 200 8895 \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [25/Apr/2021:04:57:15 +0000] "GET /favicon.ico HTTP/1.1" 404 1808 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [25/Apr/2021:04:57:15 +0000] \"GET /favicon.ico HTTP/1.1\" 404 1808 \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [25/Apr/2021:04:57:15 +0000] "GET /manifest.json HTTP/1.1" 200 200 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [25/Apr/2021:04:57:15 +0000] \"GET /manifest.json HTTP/1.1\" 200 200 \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Safari/537.36\""}}

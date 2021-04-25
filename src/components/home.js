@@ -5,7 +5,6 @@ import CreatePost from './CreatePost';
 import Feed from './feed';
 const homeStyle = {
     display: 'flex',
-    height: '100vh',
     flexDirection: 'column',
     alignItems: 'center'
 }
