@@ -9,6 +9,7 @@ import NavBar from './components/NavBar';
 // pages
 import Home from "./components/home";
 import News from "./components/news";
+import About from './components/about';
 // user
 import { UserContextProvider } from './contexts/user';
 
@@ -26,6 +27,10 @@ export default function App() {
       <Router>
         <div style={appStyle}>
           <Switch>
+            <Route path="/about">
+              <NavBar />
+              <About />
+            </Route>
             <Route path="/news">
               <NavBar />
               <News />
