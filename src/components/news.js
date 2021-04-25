@@ -3,9 +3,10 @@ import NewsList from './NewsList';
 
 const newsStyle = {
     display: 'flex',
-    // height: '100vh',
+    height: '100vh',
     flexDirection: 'column',
-    alignItems: 'center'
+    alignItems: 'center',
+    backgroundColor: 'whitesmoke'
 }
 
 export default function news() {

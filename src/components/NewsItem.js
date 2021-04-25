@@ -7,16 +7,25 @@ const NewsItemContainer = {
     alignItems: 'flex-start',
     padding: '1rem',
     marginBottom: '1.5rem',
-    backgroundColor: 'white'
+    backgroundColor: 'white',
+    maxWidth: '600px'
 }
 
 const ImageStyle = {
-    height: '100px',
-    width: 'auto'
+    height: 'auto',
+    width: '600px'
 }
 
 const LinkStyle = {
     textDecoration: 'none'
+}
+
+const ReadMoreLink = {
+    textDecoration: 'none',
+    backgroundColor: 'blue',
+    color: 'white',
+    padding: '.5rem',
+    margin: '1rem 0 0 0'
 }
 
 const NewsItem = ({title, description, url, urlToImage}) => {
@@ -28,6 +37,7 @@ const NewsItem = ({title, description, url, urlToImage}) => {
                 <a style={LinkStyle} href={url}>{title}</a>
             </h2>
             <p>{description}</p>
+            <a style={ReadMoreLink} href={url}>Read More</a>
         </div>
     )
 }
