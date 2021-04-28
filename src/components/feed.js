@@ -14,10 +14,14 @@ export default function Feed() {
 
     // function to get comments on posts on update
   useEffect(() => {
-      db.collection("posts").onSnapshot((snapshot) => {
-          setPosts(snapshot.docs.map((doc) => ({ id: doc.id, post: doc.data() })))
+    db.collection("posts")
+      // order posts by timestamp in descending order
+      .orderBy('timestamp', 'desc')
+      .onSnapshot((snapshot) => {
+        setPosts(snapshot.docs.map((doc) => ({ id: doc.id, post: doc.data() })))
+        
       });
-   
+      
   }, []);
 
   return (
