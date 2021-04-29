@@ -6,6 +6,13 @@ import AddAPhotoIcon from '@material-ui/icons/AddAPhoto';
 import firebase from "firebase";
 import { db, storage } from '../firebase';
 import makeId from './helper/functions';
+
+// placeholder when not signed in
+const NotSignedIn = {
+    color: 'salmon', 
+    fontWeight: '600'
+}
+
 // topmost div
 const CreatePostStyle = {
     display: 'flex',
@@ -170,8 +177,8 @@ export default function CreatePost() {
                     </section>
                 </div>
             ) :
-                (<div>
-                    <SignInBtn />
+                (<div style={NotSignedIn}>
+                    <p>sign in to post to the social feed!</p>
                 </div>
                 )}
         </div>
