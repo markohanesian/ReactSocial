@@ -1,5 +1,6 @@
 import React from 'react';
 // components
+import { Link } from '@material-ui/core/';
 
 const aboutStyle = {
     display: 'flex',
@@ -26,8 +27,8 @@ export default function about() {
                 I plan to add more features to make the site more interactive, fun, and secure, but in the meantime, sign in and create a post or check out the latest top news headlines.
             </p>
             <br></br>
-            <a href="https://github.com/markohanesian/social-media-app">GitHub</a>
-            <a href="https://markohanesian.com/">markohanesian.com</a>
+            <Link href="https://github.com/markohanesian/social-media-app">GitHub</Link>
+            <Link href="https://markohanesian.com/">markohanesian.com</Link>
         </div>
     )
 }
