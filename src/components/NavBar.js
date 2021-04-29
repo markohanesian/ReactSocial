@@ -10,7 +10,7 @@ const navStyle = {
     alignItems: 'center',
     width: '100%',
     backgroundColor: 'white',
-    padding: ".5rem 0 .5rem 0"
+    padding: "1rem 0 1rem 0"
 }
 
 // div left side containing home and news links
@@ -20,9 +20,11 @@ const LinksDiv = {
 
 const LogoStyle = {
     padding: '0 1rem 0 1rem',
-    fontSize: '1.5rem',
+    fontSize: '1rem',
     fontWeight: '800',
     textDecoration: 'none',
+    backgroundColor: '#73FAB3',
+    color: 'black'
 }
 
 const NewsStyle = {
@@ -33,7 +35,7 @@ const NewsStyle = {
 }
 
 const AboutStyle = {
-    padding: '0 1rem 0 1rem',
+    // padding: '0 1rem 0 1rem',
     textDecoration: 'none',
     fontSize: '1rem',
     fontWeight: '800'
