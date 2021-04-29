@@ -7,6 +7,7 @@ const btnStyle = {
     color: 'white',
     border: 'none',
     padding: '5px',
+    borderRadius: '5px',
     marginRight: '1rem'
 
     // backgroundImage: 'url(' + imgUrl + ')',
@@ -26,7 +27,7 @@ export default function SignInBtn() {
     return (
         <div>
             <button style={btnStyle} onClick={signInBtnClick}>
-                Sign In With Google
+                Sign In
             </button>
         </div>
     )

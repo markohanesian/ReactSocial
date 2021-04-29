@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react'
 import { UserContext } from '../contexts/user'
-import SignInBtn from "./SignInBtn"
 // icon for photo upload button
 import AddAPhotoIcon from '@material-ui/icons/AddAPhoto';
 import firebase from "firebase";
@@ -19,7 +18,7 @@ const CreatePostStyle = {
     justifyContent: 'center',
     alignItems: 'center',
     padding: '1rem',
-    margin: '2rem',
+    margin: '1rem',
     width: '100vw',
     maxWidth: '600px',
     backgroundColor: 'white',
@@ -39,7 +38,7 @@ const CreatePostContainer = {
 
 // User post div
 const CreatePostTextArea = {
-
+    
 }
 
 // text box where user writes post
