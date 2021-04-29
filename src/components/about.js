@@ -9,17 +9,20 @@ const aboutStyle = {
     backgroundColor: 'white'
 }
 
+const AboutParagraph = {
+    padding: '0 0 1rem 0'
+}
+
 export default function about() {
     return (
         <div style={aboutStyle}>
-            <h1>
+            {/* <h1>
                 about
-            </h1>
-            <p>
+            </h1> */}
+            <p style={AboutParagraph}>
                 I created this social media web application as a personal project; I wanted to create a simple social media site that has news and a few features that I could use to stay in touch with friends and family.
             </p>
-            <br></br>
-            <p>
+            <p style={AboutParagraph}>
                 I plan to add more features to make the site more interactive, fun, and secure, but in the meantime, sign in and create a post or check out the latest top news headlines.
             </p>
             <br></br>
