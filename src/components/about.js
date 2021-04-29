@@ -22,14 +22,13 @@ export default function about() {
                 about
             </h1> */}
             <p style={AboutParagraph}>
-                I created this social media web application as a personal project; I wanted to create a simple social media site that has news and a few features that I could use to stay in touch with friends and family.
+                I created this social media web application in order to be able to stay in touch with friends and family and also have a place to check out the latest news.
             </p>
             <p style={AboutParagraph}>
                 I plan to add more features to make the site more interactive, fun, and secure, but in the meantime, sign in and create a post or check out the latest top news headlines.
             </p>
             <br></br>
-            <Link href="https://github.com/markohanesian/social-media-app">GitHub</Link>
-            <Link href="https://markohanesian.com/">markohanesian.com</Link>
+            <Link href="https://github.com/markohanesian/social-media-app">View Source Code on GitHub</Link>
         </div>
     )
 }
