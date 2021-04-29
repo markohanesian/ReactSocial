@@ -6,7 +6,7 @@ import { UserContext } from '../contexts/user';
 
 const PostStyle = {
     padding: '1rem',
-    margin: '2rem',
+    margin: '1rem',
     backgroundColor: 'white',
     width: '90vw',
     maxWidth: '600px'
@@ -56,13 +56,8 @@ const PostPhotoUrl = {
 // div containing username, caption
 const PostText = {
     display: 'flex',
-    flexDirection: 'row',
-    marginBottom: '2rem'
-}
-
-const PostTextUser = {
-    fontWeight: '600',
-    marginRight: '1rem',
+    flexDirection: 'column',
+    marginBottom: '1rem'
 }
 
 const PostTextCaption = {
@@ -109,7 +104,7 @@ export default function Post({ avatar, username, id, uploadURL, caption, comment
             </div>
             {/* text portion of post */}
             <div style={PostText}>
-                <p style={PostTextUser}>{username}</p>
+                {/* <p style={PostTextUser}>{username}</p> */}
                 <p style={PostTextCaption}>{caption}</p>
             </div>
             {/* display CommentInput only when user signed in */}
