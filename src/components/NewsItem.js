@@ -13,19 +13,30 @@ const NewsItemContainer = {
 
 const ImageStyle = {
     height: 'auto',
-    width: '600px'
+    width: '100%',
+    maxWidth: '600px'
 }
 
 const LinkStyle = {
-    textDecoration: 'none'
+    textDecoration: 'none',
+    display: 'flex',
+    flexDirection: 'column',
+    padding: '1rem 1rem 1rem 0rem'
+}
+
+const LinkCaption = {
+    display: 'flex',
+    flexDirection: 'column'
 }
 
 const ReadMoreLink = {
     textDecoration: 'none',
+    fontWeight: '900',
     backgroundColor: 'blue',
     color: 'white',
     padding: '.5rem',
-    margin: '1rem 0 0 0'
+    margin: '1rem 0 0 0',
+    borderRadius: '5px'
 }
 
 const NewsItem = ({title, description, url, urlToImage}) => {
@@ -33,10 +44,8 @@ const NewsItem = ({title, description, url, urlToImage}) => {
         <div style={NewsItemContainer}>
             {/* article preview image, headline, description */}
             <img style={ImageStyle} src={urlToImage} alt="New Article Preview" />
-            <h2>
-                <a style={LinkStyle} href={url}>{title}</a>
-            </h2>
-            <p>{description}</p>
+            <h3 style={LinkStyle} href={url}>{title}</h3>
+            <p style={LinkCaption}>{description}</p>
             <a style={ReadMoreLink} href={url}>Read More</a>
         </div>
     )
