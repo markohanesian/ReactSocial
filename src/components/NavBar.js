@@ -27,15 +27,15 @@ const LogoStyle = {
     color: 'black'
 }
 
-const NewsStyle = {
-    padding: '0 1rem 0 1rem',
-    textDecoration: 'none',
-    fontSize: '1rem',
-    fontWeight: '800'
-}
+// const NewsStyle = {
+//     padding: '0 1rem 0 1rem',
+//     textDecoration: 'none',
+//     fontSize: '1rem',
+//     fontWeight: '800'
+// }
 
 const AboutStyle = {
-    // padding: '0 1rem 0 1rem',
+    padding: '0 1rem 0 1rem',
     textDecoration: 'none',
     fontSize: '1rem',
     fontWeight: '800'
@@ -58,7 +58,7 @@ export default function NavBar() {
         <div style={navStyle}>
             <div style={LinksDiv}>
                 <Link to="/" style={LogoStyle}>ReactSocial</Link>
-                <Link to="/news" style={NewsStyle}>news</Link>
+                {/* <Link to="/news" style={NewsStyle}>news</Link> */}
                 <Link to="/about" style={AboutStyle}>about</Link>
             </div>
             {/* if user is signed in, display avatar in navbar */}

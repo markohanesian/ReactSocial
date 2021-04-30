@@ -9,7 +9,8 @@ import NavBar from './components/NavBar';
 import FooterBar from './components/FooterBar';
 // pages
 import Home from "./components/home";
-import News from "./components/news";
+// news page disabled 
+// import News from "./components/news";
 import About from './components/about';
 // user
 import { UserContextProvider } from './contexts/user';
@@ -33,11 +34,11 @@ export default function App() {
               <About />
               <FooterBar />
             </Route>
-            <Route path="/news">
+            {/* <Route path="/news">
               <NavBar />
               <News />
               <FooterBar />
-            </Route>
+            </Route> */}
             <Route path="/">
               <NavBar />
               <Home />
