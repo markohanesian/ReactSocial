@@ -35,7 +35,7 @@ export default function FooterBar() {
       <Grid position="relative" color="primary" className={classes.footer}>
         <Toolbar>
             <div>
-                <Typography variant="body1" color="black" gutterBottom>
+                <Typography variant="body1" color="inherit" gutterBottom>
                     
                   <Link href="markohanesian.com"> Mark Ohanesian</Link>
                 </Typography>
