@@ -15,12 +15,12 @@ const NotSignedIn = {
 // topmost div
 const CreatePostStyle = {
     display: 'flex',
+    flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
+    width: '100%',
     padding: '1rem',
     margin: '1rem',
-    width: '100vw',
-    maxWidth: '600px',
     backgroundColor: 'white',
 }
 
@@ -45,15 +45,16 @@ const CreatePostTextArea = {
 const CreatePostInput = {
     display: 'flex',
     backgroundColor: 'whitesmoke',
-    maxWidth: "600px",
-    width: '100vw',
     resize: 'none',
     border: 'none'
 }
 
 // image preview styling
 const CreatePostImagePreview = {
+    display: 'flex',
+    justifyContent: 'center',
     color: 'red',
+    
 }
 
 // Bottom bar section
@@ -61,8 +62,7 @@ const CreatePostBottomBar = {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'flex-end',
-    textAlign: 'bottom'
+    alignItems: 'center',
 }
 
 // upload image areaa
@@ -72,6 +72,7 @@ const CreatePostUploadImage = {
 
 // upload image icon
 const CreatePostPhotoIcon = {
+    display: 'flex',
     cursor: "pointer",
     fontSize: "2rem",
     height: "120px",
