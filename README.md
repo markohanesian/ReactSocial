@@ -5,20 +5,19 @@
 * [React Social](https://social-media-app-mso.web.app/)
 
 ## Description
-A social media app with uploading and posting text, images, and a news feed.
+A social media app featuring the ability to post writing and images, and commenting on user posts
 
 ## User Story
-I need a social media app that I can use to login and comment on things I like, and also a source for seeing top news articles
+I need a social media app that I can use to login and comment on things I like with others online
 
 ## Instructions
-Login with Google to get started posting and viewing articles!
+Login with Google to get social!
 
 ## Built With
 * React
 * Firebase
 * Material-Ui
 * Axios
-* NewsAPI
 
 ## Planned Features/Outstanding Issues
 * More ways to authenticate and sign in
@@ -29,7 +28,6 @@ Login with Google to get started posting and viewing articles!
 
 ## Acknowledgments
 * [Sanskar Tiwari](https://www.youtube.com/channel/UCsPdgUIoOBTBI1UmulW1pdw) for the awesome tutorial on creating social media components in react
-* [Edy Dee](https://www.youtube.com/channel/UCzmMUJz2Q1fOYD_ltuMWaRQ) for the tutorial about working with newsAPI
 
 ## License
 ![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
