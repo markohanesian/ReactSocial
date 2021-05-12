@@ -105,6 +105,7 @@ export default function Post({ avatar, username, id, uploadURL, caption, comment
             </div>
             {/* display CommentInput only when user signed in */}
             {user ? <CommentInput
+                key={1}
                 id={id}
                 comments={comments} /> : <></>}
             {/* if there are comments, show, if not, show nothing */}
