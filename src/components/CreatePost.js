@@ -18,27 +18,24 @@ const CreatePostStyle = {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    width: '100%',
     padding: '1rem',
-    margin: '1rem',
-    backgroundColor: 'white',
+    margin: '2rem',
+    backgroundColor: 'rgb(115, 250, 179)',
 }
 
 // Sub-div containing text and other elements
 const CreatePostContainer = {
-    // display: 'flex',
-    // flexDirection: 'column',
-    // alignItems: 'center',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
 }
-
-// "Create a Post"
-// const PromptStyle = {
-//     marginBottom: '5rem'
-// }
 
 // User post div
 const CreatePostTextArea = {
-    
+    display: 'flex',
+    flexDirection: 'column',
+    width: '90vw',
+    maxWidth: '600px'
 }
 
 // text box where user writes post
@@ -46,7 +43,7 @@ const CreatePostInput = {
     display: 'flex',
     backgroundColor: 'whitesmoke',
     resize: 'none',
-    border: 'none'
+    border: 'none',
 }
 
 // image preview styling
@@ -54,15 +51,16 @@ const CreatePostImagePreview = {
     display: 'flex',
     justifyContent: 'center',
     color: 'red',
-    
 }
 
 // Bottom bar section
 const CreatePostBottomBar = {
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'space-between',
     alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+    padding: '0 1rem 0 1rem'
 }
 
 // upload image areaa
@@ -149,7 +147,6 @@ export default function CreatePost() {
             {user ? (
 
                 <div style={CreatePostContainer}>
-                    {/* <p style={PromptStyle}>Create Post</p> */}
                     <div style={CreatePostTextArea}>
                         <textarea
                             style={CreatePostInput}
