@@ -12,6 +12,7 @@ import Home from "./components/home";
 // news page disabled 
 // import News from "./components/news";
 import About from './components/about';
+import SignedOut from './components/SignedOut';
 // user
 import { UserContextProvider } from './contexts/user';
 
@@ -29,6 +30,10 @@ export default function App() {
       <Router>
         <div style={appStyle}>
           <Switch>
+          <Route path="/signed-out">
+              <SignedOut />
+           
+            </Route>
             <Route path="/about">
               <NavBar />
               <About />
