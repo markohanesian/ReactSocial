@@ -22,12 +22,14 @@ Login with Google to get social!
 ## Planned Features/Outstanding Issues
 * More sign-in methods for user authentication 
 * User profile and settings 
+* Persistant auth state so users stay signed in on page refresh
 
 ## Authors
 * [Mark Ohanasian](https://github.com/markohanesian) 
 
 ## Acknowledgments
 * [Sanskar Tiwari](https://www.youtube.com/channel/UCsPdgUIoOBTBI1UmulW1pdw) for the awesome tutorial on creating social media components in react
+* [Catilac](https://gist.github.com/catilac) for the helpful code review
 
 ## License
 ![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
