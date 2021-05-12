@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { UserContext } from '../contexts/user'
 // icon for photo upload button
+import {Fab, Tooltip, Button } from '@material-ui/core';
 import AddAPhotoIcon from '@material-ui/icons/AddAPhoto';
 import firebase from "firebase";
 import { db, storage } from '../firebase';
@@ -8,7 +9,7 @@ import makeId from './helper/functions';
 
 // placeholder when not signed in
 const NotSignedIn = {
-    color: 'black', 
+    color: 'black',
     fontWeight: '600'
 }
 
@@ -60,10 +61,14 @@ const CreatePostBottomBar = {
     alignItems: 'center',
     justifyContent: 'space-between',
     width: '100%',
-    padding: '0 1rem 0 1rem'
+    padding: '2rem'
 }
 
 // upload image icon
+const CreatePostPhotoIconFab = {
+    display: 'flex',
+    backgroundColor: 'white',}
+
 const CreatePostPhotoIcon = {
     display: 'flex',
     cursor: "pointer",
@@ -146,26 +151,31 @@ export default function CreatePost() {
                         <textarea
                             style={CreatePostInput}
                             rows="3"
-                            placeholder="Add and image and write something to post to the feed..."
+                            placeholder="First add an image, then write something to post to the feed..."
                             value={caption}
                             onChange={((e) => setCaption(e.target.value))}
                         >
                         </textarea>
                         <div style={CreatePostImagePreview}>
                             {/* img styled inline so that it is hidden by default */}
-                            <img style={{display: 'none', height: '8rem'}} id="image-preview" alt="preview" />
+                            <img style={{ display: 'none', height: '8rem' }} id="image-preview" alt="preview" />
                         </div>
                     </div>
                     <section style={CreatePostBottomBar}>
                         <div>
-                            <label htmlFor="file-input">
-                                <AddAPhotoIcon style={CreatePostPhotoIcon} />
-                            </label>
+                            <Tooltip title="Add Image" aria-label="add">
+                                <Fab style={CreatePostPhotoIconFab}>
+                                    <label htmlFor="file-input">
+                                        <AddAPhotoIcon style={CreatePostPhotoIcon} />
+                                    </label>
+                                </Fab>
+                            </Tooltip>
+
                             <input style={CreatePostUploadButton} id="file-input" type="file" accept="image/*" onChange={handleChange} />
                         </div>
-                        <button style={{ color: caption ? "black" : "whitesmoke", border: "none", backgroundColor: "white" }} onClick={handleUpload}>
+                        <Button variant="contained" style={{ color: caption ? "black" : "whitesmoke", border: "none", backgroundColor: "white" }} onClick={handleUpload}>
                             {`Upload ${progress !== 0 ? progress : ""}`}
-                        </button>
+                        </Button>
                     </section>
                 </div>
             ) :
