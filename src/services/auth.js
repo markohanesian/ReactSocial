@@ -19,7 +19,7 @@ export const logout = async () => {
     let logout_success;
     await auth.signOut()
         .then(() => {
-            logout_success = true;
+            logout_success = false;
         }).catch((error) => {
             console.log(error.message);
         })
