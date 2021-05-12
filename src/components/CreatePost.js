@@ -8,7 +8,7 @@ import makeId from './helper/functions';
 
 // placeholder when not signed in
 const NotSignedIn = {
-    color: 'salmon', 
+    color: 'black', 
     fontWeight: '600'
 }
 
