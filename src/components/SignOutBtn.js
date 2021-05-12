@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom';
 
 
 const btnStyle = {
-    backgroundColor: 'salmon',
+    backgroundColor: '#AD392D',
     color: 'white',
     border: 'none',
     padding: '5px',

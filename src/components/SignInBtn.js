@@ -3,7 +3,7 @@ import { UserContext } from '../contexts/user';
 import { signInWithGoogle } from "../services/auth";
 
 const btnStyle = {
-    backgroundColor: 'salmon',
+    backgroundColor: '#AD392D',
     color: 'white',
     border: 'none',
     padding: '5px',
