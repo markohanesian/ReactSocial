@@ -1,4 +1,4 @@
-# Social Media App
+# ReactSocial
 ![ReactSocial preview image](/public/react-social-preview.png)
 
 ## Links
