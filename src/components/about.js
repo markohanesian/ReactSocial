@@ -18,9 +18,6 @@ const AboutParagraph = {
 export default function about() {
     return (
         <div style={aboutStyle}>
-            {/* <h1>
-                about
-            </h1> */}
             <p style={AboutParagraph}>
                 I created ReactSocial as a way to have my own custom social feed online where I can interact with friends and family by sharing images and posting about various topics for fun.
             </p>

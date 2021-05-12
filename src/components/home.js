@@ -1,6 +1,5 @@
 import React from 'react';
 // components
-// import NavBar from './NavBar';
 import CreatePost from './CreatePost';
 import Feed from './feed';
 const homeStyle = {

@@ -9,8 +9,6 @@ const btnStyle = {
     padding: '5px',
     borderRadius: '5px',
     marginRight: '1rem'
-
-    // backgroundImage: 'url(' + imgUrl + ')',
   };
 
 export default function SignInBtn() {

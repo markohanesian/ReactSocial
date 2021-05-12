@@ -63,11 +63,6 @@ const CreatePostBottomBar = {
     padding: '0 1rem 0 1rem'
 }
 
-// upload image areaa
-const CreatePostUploadImage = {
-
-}
-
 // upload image icon
 const CreatePostPhotoIcon = {
     display: 'flex',
@@ -162,7 +157,7 @@ export default function CreatePost() {
                         </div>
                     </div>
                     <section style={CreatePostBottomBar}>
-                        <div style={CreatePostUploadImage}>
+                        <div>
                             <label htmlFor="file-input">
                                 <AddAPhotoIcon style={CreatePostPhotoIcon} />
                             </label>

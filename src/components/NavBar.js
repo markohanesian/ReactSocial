@@ -2,9 +2,8 @@ import React, { useContext } from 'react';
 import { UserContext } from '../contexts/user';
 import SignInBtn from "./SignInBtn";
 import SignOutBtn from './SignOutBtn';
-import {
-Link
-  } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 const navStyle = {
     display: 'flex',
     justifyContent: 'space-between',
@@ -12,11 +11,6 @@ const navStyle = {
     width: '100%',
     backgroundColor: 'white',
     padding: "1rem 0 1rem 0"
-}
-
-// div left side containing home and news links
-const LinksDiv = {
-    
 }
 
 const LogoStyle = {
@@ -27,13 +21,6 @@ const LogoStyle = {
     backgroundColor: '#73FAB3',
     color: 'black'
 }
-
-// const NewsStyle = {
-//     padding: '0 1rem 0 1rem',
-//     textDecoration: 'none',
-//     fontSize: '1rem',
-//     fontWeight: '800'
-// }
 
 const AboutStyle = {
     padding: '0 1rem 0 1rem',
@@ -50,16 +37,11 @@ const NavbarImgStyle = {
 }
 
 export default function NavBar() {
-
     const [user] = useContext(UserContext).user
-
-
-
     return (
         <div style={navStyle}>
-            <div style={LinksDiv}>
+            <div>
                 <Link to="/" style={LogoStyle}>ReactSocial</Link>
-                {/* <Link to="/news" style={NewsStyle}>news</Link> */}
                 <Link to="/about" style={AboutStyle}>about</Link>
             </div>
             {/* if user is signed in, display avatar in navbar */}

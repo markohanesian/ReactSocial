@@ -68,15 +68,12 @@ export default function Post({ avatar, username, id, uploadURL, caption, comment
     const [user] = useContext(UserContext).user
     const deletePost = () => {
         // delete image from Firebase store
-        
         // get reference to the image file I want to delete
-        
         var imageRef = storage.refFromURL(uploadURL);
-
         // delete the file
         imageRef.delete().then(function () {
             console.log("delete successful")
-        }).catch(function(error) {
+        }).catch(function (error) {
             console.log(`Error ${error}`);
         });
 
@@ -104,7 +101,6 @@ export default function Post({ avatar, username, id, uploadURL, caption, comment
             </div>
             {/* text portion of post */}
             <div style={PostText}>
-                {/* <p style={PostTextUser}>{username}</p> */}
                 <p style={PostTextCaption}>{caption}</p>
             </div>
             {/* display CommentInput only when user signed in */}
@@ -113,8 +109,6 @@ export default function Post({ avatar, username, id, uploadURL, caption, comment
                 comments={comments} /> : <></>}
             {/* if there are comments, show, if not, show nothing */}
             {comments ? comments.map((comment) => <Comment username={comment.username} caption={comment.comment} />) : <></>}
-            
-            
         </div>
     )
 }
