@@ -1,4 +1,4 @@
-# Social Media App
+# ReactSocial
 ![ReactSocial preview image](/public/react-social-preview.png)
 
 ## Links
@@ -25,7 +25,7 @@ Login with Google to get social!
 * Persistant auth state so users stay signed in on page refresh
 
 ## Authors
-* [Mark Ohanasian](https://github.com/markohanesian) 
+* [Mark Ohanesian](https://github.com/markohanesian) 
 
 ## Acknowledgments
 * [Sanskar Tiwari](https://www.youtube.com/channel/UCsPdgUIoOBTBI1UmulW1pdw) for the awesome tutorial on creating social media components in react
