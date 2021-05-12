@@ -1,6 +1,7 @@
-import React, { useContext } from 'react'
-import { UserContext } from '../contexts/user'
-import SignInBtn from "./SignInBtn"
+import React, { useContext } from 'react';
+import { UserContext } from '../contexts/user';
+import SignInBtn from "./SignInBtn";
+import SignOutBtn from './SignOutBtn';
 import {
 Link
   } from "react-router-dom";
@@ -62,7 +63,12 @@ export default function NavBar() {
                 <Link to="/about" style={AboutStyle}>about</Link>
             </div>
             {/* if user is signed in, display avatar in navbar */}
-            {user ? <img alt={"avatar"} style={NavbarImgStyle} src={user.photoURL} /> : <SignInBtn />}
+            {user ? 
+                <>
+                    <img alt={"avatar"} style={NavbarImgStyle} src={user.photoURL} />
+                    <SignOutBtn />
+                </>:
+                <SignInBtn />}
         </div>
     )
 }
