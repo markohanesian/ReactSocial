@@ -9,8 +9,6 @@ import NavBar from './components/NavBar';
 import FooterBar from './components/FooterBar';
 // pages
 import Home from "./components/home";
-// news page disabled 
-// import News from "./components/news";
 import About from './components/about';
 import SignedOut from './components/SignedOut';
 // user
@@ -23,7 +21,6 @@ const appStyle = {
 }
 
 export default function App() {
-
 
   return (
     <UserContextProvider>
@@ -39,11 +36,6 @@ export default function App() {
               <About />
               <FooterBar />
             </Route>
-            {/* <Route path="/news">
-              <NavBar />
-              <News />
-              <FooterBar />
-            </Route> */}
             <Route path="/">
               <NavBar />
               <Home />
