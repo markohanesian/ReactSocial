@@ -1,14 +1,14 @@
 # Social Media App
-![Git Good Website Image](/public/pexels-photo-607812.jpeg)
+![ReactSocial preview image](/public/react-social-preview.png)
 
 ## Links
 * [React Social](https://social-media-app-mso.web.app/)
 
 ## Description
-A social media app featuring the ability to post writing and images, and commenting on user posts
+A social media app featuring the ability to post text and images, and comment on user posts
 
 ## User Story
-I need a social media app that I can use to login and comment on things I like with others online
+I need a social media app that I can use to login, post images and text, and comment on other users' posts online 
 
 ## Instructions
 Login with Google to get social!
@@ -16,11 +16,11 @@ Login with Google to get social!
 ## Built With
 * React
 * Firebase
+* React-Router
 * Material-Ui
-* Axios
 
 ## Planned Features/Outstanding Issues
-* More ways to authenticate and sign in
+* More sign-in methods for user authentication 
 * User profile and settings 
 
 ## Authors
@@ -31,9 +31,5 @@ Login with Google to get social!
 
 ## License
 ![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
-![GitHub release](https://img.shields.io/github/v/release/markohanesian/Burger-Logger)
+![GitHub release](https://img.shields.io/github/v/release/markohanesian/social-media-app)
 ![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)
-
-
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/0c7ff7fe-2af1-4af5-8481-7a5ff9f25a10/deploy-status)](https://app.netlify.com/sites/armenian-names/deploys) coming soon
