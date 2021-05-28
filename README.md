@@ -11,7 +11,7 @@ A social media app featuring the ability to post text and images, and comment on
 I need a social media app that I can use to login, post images and text, and comment on other users' posts online 
 
 ## Instructions
-Login with Google to get social!
+Click "Sign In" to sign in with your Google account to get social!
 
 ## Built With
 * React
