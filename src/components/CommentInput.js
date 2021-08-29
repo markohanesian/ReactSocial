@@ -1,7 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { UserContext } from '../contexts/user'
 import { db } from '../firebase';
-import Liker from './Liker';
 
 const CommentInputStyle = {
     display: 'flex',
@@ -58,7 +57,6 @@ export default function CommentInput({ id, comments }) {
             ></textarea>
 
             <button onClick={addComment} style={CommentPostBtn}>Post</button>
-            <Liker />
         </div>
     )
 }
