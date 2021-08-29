@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import Comment from './comment';
 import CommentInput from './CommentInput'
-import { db, storage } from '../firebase';
 import { UserContext } from '../contexts/user';
+import Liker from './Liker';
 
 const PostStyle = {
     padding: '1rem',
@@ -34,13 +34,6 @@ const PostProfilePic = {
     borderRadius: '50%'
 }
 
-const PostDeleteBtn = {
-    backgroundColor: 'red',
-    color: 'white',
-    border: 'none',
-    padding: '5px',
-}
-
 // div containing image being posted
 const PostCenter = {
 
@@ -65,25 +58,7 @@ const PostTextCaption = {
 }
 
 export default function Post({ avatar, username, id, uploadURL, caption, comments }) {
-    const [user] = useContext(UserContext).user
-    const deletePost = () => {
-        // delete image from Firebase store
-        // get reference to the image file I want to delete
-        var imageRef = storage.refFromURL(uploadURL);
-        // delete the file
-        imageRef.delete().then(function () {
-            console.log("delete successful")
-        }).catch(function (error) {
-            console.log(`Error ${error}`);
-        });
-
-        // delete post info from Firestore
-        db.collection("posts").doc(id).delete().then(function () {
-            console.log("delete post successful")
-        }).catch(function (error) {
-            console.log(`Error post info delete ${error}`);
-        });
-    }
+    const [user] = useContext(UserContext).user;
 
     return (
         // header portion of post
@@ -93,7 +68,7 @@ export default function Post({ avatar, username, id, uploadURL, caption, comment
                     <img src={avatar} style={PostProfilePic} alt="user avatar" />
                     <p style={PostUserName}>{username}</p>
                 </div>
-                {user ? <button style={PostDeleteBtn} onClick={deletePost}>Delete</button> : <></>}
+                {user ? <Liker /> : <></>}
             </div>
             {/* image portion of post */}
             <div style={PostCenter}>
