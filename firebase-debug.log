@@ -1,0 +1,41 @@
+[debug] [2021-11-03T13:49:34.182Z] ----------------------------------------------------------------------
+[debug] [2021-11-03T13:49:34.184Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\mso87\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start
+[debug] [2021-11-03T13:49:34.184Z] CLI Version:   9.16.6
+[debug] [2021-11-03T13:49:34.184Z] Platform:      win32
+[debug] [2021-11-03T13:49:34.184Z] Node Version:  v14.15.0
+[debug] [2021-11-03T13:49:34.185Z] Time:          Wed Nov 03 2021 06:49:34 GMT-0700 (Pacific Daylight Time)
+[debug] [2021-11-03T13:49:34.185Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-11-03T13:49:34.187Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2021-11-03T13:49:34.246Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-11-03T13:49:34.246Z] > authorizing via signed-in user (mso872@gmail.com)
+[info] i  emulators: Starting emulators: functions, hosting {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions, hosting"}}
+[debug] [2021-11-03T13:49:34.266Z] [hub] writing locator at C:\Users\mso87\AppData\Local\Temp\hub-social-media-app-mso.json
+[warn] !  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, firestore, database, pubsub, storage {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, firestore, database, pubsub, storage\u001b[22m"}}
+[info] i  emulators: Shutting down emulators. {"metadata":{"emulator":{"name":"hub"},"message":"Shutting down emulators."}}
+[info] i  functions: Stopping Functions Emulator {"metadata":{"emulator":{"name":"functions"},"message":"Stopping Functions Emulator"}}
+[info] i  hub: Stopping emulator hub {"metadata":{"emulator":{"name":"hub"},"message":"Stopping emulator hub"}}
+[debug] [2021-11-03T13:49:34.442Z] Error: Cannot find module 'C:\Users\mso87\Development\social-media-app\functions\package.json'
+Require stack:
+- C:\Users\mso87\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulator.js
+- C:\Users\mso87\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\controller.js
+- C:\Users\mso87\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\commandUtils.js
+- C:\Users\mso87\AppData\Roaming\npm\node_modules\firebase-tools\lib\commands\database-get.js
+- C:\Users\mso87\AppData\Roaming\npm\node_modules\firebase-tools\lib\commands\index.js
+- C:\Users\mso87\AppData\Roaming\npm\node_modules\firebase-tools\lib\index.js
+- C:\Users\mso87\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:880:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:725:27)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at FunctionsEmulator.askInstallNodeVersion (C:\Users\mso87\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulator.js:447:21)
+    at FunctionsEmulator.start (C:\Users\mso87\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulator.js:158:32)
+    at Function.start (C:\Users\mso87\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\registry.js:16:24)
+    at startEmulator (C:\Users\mso87\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\controller.js:90:39)
+    at Object.startAll (C:\Users\mso87\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\controller.js:273:15)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async Command.actionFn (C:\Users\mso87\AppData\Roaming\npm\node_modules\firebase-tools\lib\commands\emulators-start.js:26:9)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2021-11-03T13:49:34.510Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2021-11-03T13:49:34.510Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
