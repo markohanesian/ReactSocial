@@ -6,12 +6,7 @@ import AddAPhotoIcon from '@material-ui/icons/AddAPhoto';
 import firebase from "firebase";
 import { db, storage } from '../firebase';
 import makeId from './helper/functions';
-
-// placeholder when not signed in
-const NotSignedIn = {
-    color: 'black',
-    fontWeight: '600'
-}
+import HeaderNewUser from './HeaderNewUser';
 
 // topmost div
 const CreatePostStyle = {
@@ -19,8 +14,10 @@ const CreatePostStyle = {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
+    margin: '1rem',
     padding: '1rem',
-    margin: '2rem',
+    width: '90vw',
+    maxWidth: '600px',
     backgroundColor: 'rgb(115, 250, 179)',
 }
 
@@ -45,6 +42,7 @@ const CreatePostInput = {
     backgroundColor: 'whitesmoke',
     resize: 'none',
     border: 'none',
+    margin: '1rem'
 }
 
 // image preview styling
@@ -178,11 +176,7 @@ export default function CreatePost() {
                         </Button>
                     </section>
                 </div>
-            ) :
-                (<div style={NotSignedIn}>
-                    <p>sign in to post to the social feed!</p>
-                </div>
-                )}
+            ) : <HeaderNewUser />}
         </div>
     )
 }
