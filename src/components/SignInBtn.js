@@ -3,15 +3,6 @@ import { UserContext } from '../contexts/user';
 import { signInWithGoogle } from "../services/auth";
 import { Button } from '@material-ui/core';
 
-const btnStyle = {
-    backgroundColor: '#AD392D',
-    color: 'white',
-    border: 'none',
-    padding: '5px',
-    borderRadius: '5px',
-    marginRight: '1rem'
-  };
-
 export default function SignInBtn() {
     const [user, setUser] = useContext
         (UserContext).user;
@@ -25,7 +16,7 @@ export default function SignInBtn() {
 
     return (
         <div>
-            <Button className='sign-in-btn' onClick={signInBtnClick} variant="contained" color="primary">
+            <Button className='sign-in-btn' onClick={signInBtnClick} variant="contained" style={{background: "#8bc34a", color: "black", fontWeight: "bold"}}>
                 Sign In
             </Button>
         </div>
