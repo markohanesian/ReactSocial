@@ -17,8 +17,9 @@ const CreatePostStyle = {
     margin: '1rem',
     padding: '1rem',
     width: '90vw',
-    maxWidth: '600px',
-    backgroundColor: 'rgb(115, 250, 179)',
+    maxWidth: '900px',
+    backgroundColor: 'rgb(22,22,22)',
+    borderRadius: "16px"
 }
 
 // Sub-div containing text and other elements
