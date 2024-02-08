@@ -5,21 +5,29 @@ import SignInBtn from './SignInBtn';
 const HeaderContainerStyle = {
     display: 'flex',
     flexDirection: 'column',
-    padding: '1rem',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: '3rem',
     margin: '1rem',
-    backgroundColor: 'white',
+    backgroundColor: '#161616',
     width: '90vw',
-    maxWidth: '600px'
+    height: "40vh",
+    maxWidth: '600px',
+    color: "#f7f7f7",
+    borderRadius: '10px'
 }
 
 export default function HeaderNewUser() {
     return (
         <div style={HeaderContainerStyle}>
-            <Typography variant="h4" gutterBottom component="div">
-                Social media, simplified
+            <Typography variant="h2" gutterBottom component="h1">
+                Social Simplified
             </Typography>
             <Typography variant="subtitle1" gutterBottom component="div">
-                Sign in securely, post text and images, and comment on user posts easily - that's it!
+                <span role="img" aria-label="bullet">&#x1F539;</span> Sign in securely<br />
+                <span role="img" aria-label="bullet">&#x1F539;</span> Make a post<br />
+                <span role="img" aria-label="bullet">&#x1F539;</span> Comment on user posts easily<br />
+                <span role="img" aria-label="bullet">&#x1F539;</span> that's it!
             </Typography>
             <SignInBtn />
         </div>

@@ -9,7 +9,7 @@ const navStyle = {
     justifyContent: 'space-between',
     alignItems: 'center',
     width: '100%',
-    backgroundColor: 'white',
+    backgroundColor: '#161616',
     padding: "1rem 0 1rem 0"
 }
 
@@ -26,7 +26,8 @@ const AboutStyle = {
     padding: '0 1rem 0 1rem',
     textDecoration: 'none',
     fontSize: '1rem',
-    fontWeight: '800'
+    fontWeight: '800',
+    color: "whitesmoke"
 }
 
 const NavbarImgStyle = {
