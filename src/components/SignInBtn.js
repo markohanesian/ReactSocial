@@ -24,7 +24,7 @@ export default function SignInBtn() {
 
     return (
         <div>
-            <button style={btnStyle} onClick={signInBtnClick}>
+            <button className='sign-in-btn' style={btnStyle} onClick={signInBtnClick}>
                 Sign In
             </button>
         </div>
