@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { UserContext } from '../contexts/user';
 import { signInWithGoogle } from "../services/auth";
+import { Button } from '@material-ui/core';
 
 const btnStyle = {
     backgroundColor: '#AD392D',
@@ -24,9 +25,9 @@ export default function SignInBtn() {
 
     return (
         <div>
-            <button className='sign-in-btn' style={btnStyle} onClick={signInBtnClick}>
+            <Button className='sign-in-btn' onClick={signInBtnClick} variant="contained" color="primary">
                 Sign In
-            </button>
+            </Button>
         </div>
     )
 }
