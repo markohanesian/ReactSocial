@@ -34,7 +34,6 @@ const NavbarImgStyle = {
     height: '40px',
     width: '40px',
     borderRadius: '50%',
-    marginRight: '1rem'
 }
 
 export default function NavBar() {
@@ -51,7 +50,7 @@ export default function NavBar() {
                     <img alt={"avatar"} style={NavbarImgStyle} src={user.photoURL} />
                     <SignOutBtn />
                 </>:
-                <SignInBtn />}
+                <div style={{ width: "110px", marginRight: '1rem'}}><SignInBtn /></div>}
         </div>
     )
 }
