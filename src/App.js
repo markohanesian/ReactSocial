@@ -8,7 +8,7 @@ import {
 import NavBar from './components/NavBar';
 import FooterBar from './components/FooterBar';
 // pages
-import Home from "./components/home";
+import Home from "./components/Home";
 import About from './components/about';
 import SignedOut from './components/SignedOut';
 // user
