@@ -18,7 +18,7 @@ const LogoStyle = {
     fontSize: '1rem',
     fontWeight: '800',
     textDecoration: 'none',
-    backgroundColor: '#73FAB3',
+    backgroundColor: 'rgb(139, 195, 74)',
     color: 'black'
 }
 
