@@ -24,8 +24,8 @@ export default function HeaderNewUser() {
                 Social Simplified
             </Typography>
             <img
-                src="https://images.pexels.com/photos/1251855/pexels-photo-1251855.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                alt="image of man on his phone"
+                src="https://images.pexels.com/photos/1036808/pexels-photo-1036808.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="White Smartphone Beside Silver Laptop Computer"
                 style={{
                     width: '100%',
                     height: 'auto',
