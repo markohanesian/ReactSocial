@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 // components
 import CreatePost from './CreatePost';
 import Feed from './feed';
+import { UserContext } from '../contexts/user';
+
 const homeStyle = {
     display: 'flex',
     flexDirection: 'column',
@@ -9,11 +11,14 @@ const homeStyle = {
     backgroundColor: 'rgb(58,63,65)'
 }
 
-export default function home() {
+export default function Home() {
+    const [user] = useContext(UserContext).user
     return (
         <div style={homeStyle}>
             <CreatePost />
-            <Feed />
+            {/* if user is signed in, display feed */}
+            {user &&
+                <Feed />}
         </div>
     )
 }
