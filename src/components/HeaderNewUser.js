@@ -23,12 +23,23 @@ export default function HeaderNewUser() {
             <Typography variant="h2" gutterBottom component="h1">
                 Social Simplified
             </Typography>
+            <img
+                src="https://images.pexels.com/photos/1251855/pexels-photo-1251855.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="image of man on his phone"
+                style={{
+                    width: '100%',
+                    height: 'auto',
+                    borderRadius: '16px',
+                    marginBottom: '2rem'
+                }}
+            />
             <Typography variant="subtitle1" gutterBottom component="div">
                 <span role="img" aria-label="bullet">&#x1F539;</span> Sign in securely<br />
                 <span role="img" aria-label="bullet">&#x1F539;</span> Make a post<br />
                 <span role="img" aria-label="bullet">&#x1F539;</span> Comment on user posts easily<br />
                 <span role="img" aria-label="bullet">&#x1F539;</span> that's it!
             </Typography>
+            <br></br>
             <SignInBtn />
         </div>
     );
