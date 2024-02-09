@@ -16,7 +16,7 @@ export default function SignInBtn() {
 
     return (
         <div>
-            <Button className='sign-in-btn' onClick={signInBtnClick} variant="contained" style={{background: "#8bc34a", color: "black", fontWeight: "bold"}}>
+            <Button className='sign-in-btn' onClick={signInBtnClick} variant="contained" style={{background: "#8bc34a", color: "black", fontWeight: "bold", marginRight: "1rem"}}>
                 Sign In
             </Button>
         </div>
