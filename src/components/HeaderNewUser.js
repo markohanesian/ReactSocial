@@ -11,7 +11,7 @@ const HeaderContainerStyle = {
     margin: '1rem',
     backgroundColor: '#161616',
     width: '90vw',
-    height: "40vh",
+    minHeight: "40vh",
     maxWidth: '600px',
     color: "#f7f7f7",
     borderRadius: '10px'
