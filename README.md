@@ -22,7 +22,7 @@ Click "Sign In" to sign in with your Google account to get social!
 ## Planned Features/Outstanding Issues
 * More sign-in methods for user authentication 
 * User profile and settings 
-* Persistant auth state so users stay signed in on page refresh
+* Persistant auth state so users stay signed in on page refresh ✅
 * Update feed UI to be more responsive
 * Add author info to about
 
