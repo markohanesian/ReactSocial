@@ -15,11 +15,10 @@ const navStyle = {
 
 const LogoStyle = {
     padding: '0 1rem 0 1rem',
-    fontSize: '1rem',
+    fontSize: '1.2rem',
     fontWeight: '800',
     textDecoration: 'none',
-    backgroundColor: 'rgb(139, 195, 74)',
-    color: 'black'
+    color: 'rgb(139, 195, 74)',
 }
 
 const AboutStyle = {
