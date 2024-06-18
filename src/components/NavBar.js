@@ -37,7 +37,7 @@ const NavbarImgStyle = {
 }
 
 export default function NavBar() {
-    const [user] = useContext(UserContext).user
+    const [user] = useContext(UserContext).user;
     return (
         <div style={navStyle}>
             <div>
@@ -52,5 +52,5 @@ export default function NavBar() {
                 </>:
                 <div style={{ width: "110px", marginRight: '1rem'}}><SignInBtn /></div>}
         </div>
-    )
+    );
 }

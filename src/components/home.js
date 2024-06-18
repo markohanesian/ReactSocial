@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-// components
 import CreatePost from './CreatePost';
 import Feed from './feed';
 import { UserContext } from '../contexts/user';
@@ -12,13 +11,12 @@ const homeStyle = {
 }
 
 export default function Home() {
-    const [user] = useContext(UserContext).user
+    const [user] = useContext(UserContext).user;
     return (
         <div style={homeStyle}>
             <CreatePost />
             {/* if user is signed in, display feed */}
-            {user &&
-                <Feed />}
+            {user && <Feed />}
         </div>
-    )
+    );
 }

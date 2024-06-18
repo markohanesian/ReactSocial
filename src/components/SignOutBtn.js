@@ -1,37 +1,20 @@
 import React, { useContext } from 'react';
 import { UserContext } from '../contexts/user';
-import { logout } from "../services/auth";
-import { useHistory } from 'react-router-dom';
+import { logout } from '../services/auth'; // Ensure correct path
 
+const SignOutBtn = () => {
+    const [, setUser] = useContext(UserContext).user;
 
-const btnStyle = {
-    backgroundColor: '#AD392D',
-    color: 'white',
-    border: 'none',
-    padding: '5px',
-    borderRadius: '5px',
-    marginRight: '1rem'
-};
-
-export default function SignOutBtn() {
-    let history = useHistory();
-    const [user, setUser] = useContext
-        (UserContext).user;
-
-    // sign in function
-    const SignOutBtnClick = async () => {
-        let SignedOutUser = await logout();
-        if (SignedOutUser) setUser(SignedOutUser);
-            console.log(user);
-        localStorage.removeItem('token');
-        history.push('/signed-out');
+    const handleLogout = async () => {
+        const success = await logout();
+        if (success) {
+            setUser(null);
+        }
     };
 
     return (
-        <div>
-            <button style={btnStyle} onClick={SignOutBtnClick}>
-                Sign Out
-            </button>
-        </div>
-    )
-}
+        <button onClick={handleLogout}>Logout</button>
+    );
+};
+
+export default SignOutBtn;

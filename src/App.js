@@ -26,25 +26,21 @@ export default function App() {
     <UserContextProvider>
       <Router>
         <div style={appStyle}>
+          <NavBar />
           <Switch>
-          <Route path="/signed-out">
+            <Route path="/signed-out">
               <SignedOut />
-           
             </Route>
             <Route path="/about">
-              <NavBar />
               <About />
-              <FooterBar />
             </Route>
             <Route path="/">
-              <NavBar />
               <Home />
-              <FooterBar />
             </Route>
           </Switch>
+          <FooterBar />
         </div>
       </Router>
     </UserContextProvider>
   );
-};
-
+}
