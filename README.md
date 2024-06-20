@@ -20,10 +20,15 @@ Click "Sign In" to sign in with your Google account to get social!
 * Material-Ui
 
 ## Planned Features/Outstanding Issues
+
+✅ = fixed
+
+* Persistant auth state so users stay signed in on page refresh ✅
+* Create post styled to be more visible and user-friendly ✅
+* Create post button disabled when no user text to clarify UX ✅
+* Update feed UI to be mobile responsive ✅
 * More sign-in methods for user authentication 
 * User profile and settings 
-* Persistant auth state so users stay signed in on page refresh ✅
-* Update feed UI to be more responsive
 * Add author info to about
 
 ## Authors
