@@ -43,7 +43,11 @@ const CreatePostInput = {
     backgroundColor: 'whitesmoke',
     resize: 'none',
     border: 'none',
-    margin: '1rem'
+    margin: '1rem',
+    padding: '.5rem',
+    fontWeight: '700',
+    borderRadius: '12px',
+    fontStyle: 'italic'
 }
 
 // image preview styling
