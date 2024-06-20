@@ -154,7 +154,7 @@ export default function CreatePost() {
                         <textarea
                             style={CreatePostInput}
                             rows="3"
-                            placeholder="First add an image, then write something to post to the feed..."
+                            placeholder="Write something to post to the feed, and add an image if you have one to share..."
                             value={caption}
                             onChange={((e) => setCaption(e.target.value))}
                         >
