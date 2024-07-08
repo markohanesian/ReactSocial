@@ -11,6 +11,7 @@ const PostStyle = {
   backgroundColor: "white",
   width: "90vw",
   maxWidth: "600px",
+  position: "relative",
 };
 
 const PostHeader = {
@@ -50,6 +51,29 @@ const PostText = {
 
 const PostTextCaption = {};
 
+const BottomActions = {
+  display: "flex",
+  justifyContent: "center", // Center items horizontally
+  alignItems: "center",
+    gap: "1rem",
+  margin: 0
+};
+
+const CommentInputContainer = {
+  flexGrow: 1,
+};
+
+const DeleteButtonStyle = {
+  position: "absolute",
+  top: "1rem",
+  right: "1rem",
+  backgroundColor: "red",
+  color: "white",
+  border: "none",
+  padding: "0.5rem",
+  cursor: "pointer",
+};
+
 export default function Post({
   avatar,
   username,
@@ -58,7 +82,7 @@ export default function Post({
   caption,
   comments,
   onDelete,
-  ownerEmail, // Add this prop
+  ownerEmail,
 }) {
   const [user] = useContext(UserContext).user;
 
@@ -80,6 +104,11 @@ export default function Post({
           <img src={avatar} style={PostProfilePic} alt="user avatar" />
           <p style={PostUserName}>{username}</p>
         </div>
+        {isPostOwner && (
+          <button style={DeleteButtonStyle} onClick={handleDelete}>
+            Delete
+          </button>
+        )}
       </div>
       <div style={PostCenter}>
         <img src={uploadURL} alt="" style={PostPhotoUrl} />
@@ -87,7 +116,14 @@ export default function Post({
       <div style={PostText}>
         <p style={PostTextCaption}>{caption}</p>
       </div>
-      {user ? <CommentInput key={1} id={id} comments={comments} /> : null}
+      {user ? (
+        <div style={BottomActions}>
+          <div style={CommentInputContainer}>
+            <CommentInput key={1} id={id} comments={comments} />
+          </div>
+          <Liker />
+        </div>
+      ) : null}
       {comments
         ? comments.map((comment, index) => (
             <Comment
@@ -97,12 +133,6 @@ export default function Post({
             />
           ))
         : null}
-      {user && <Liker />}
-      {isPostOwner && (
-        <button style={{ backgroundColor: "red" }} onClick={handleDelete}>
-          Delete
-        </button>
-      )}
     </div>
   );
 }

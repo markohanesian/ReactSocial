@@ -7,7 +7,6 @@ const CommentInputStyle = {
     justifyContent: 'space-between',
     alignItems: 'center',
     marginLeft: '1rem',
-    marginBottom: '2rem'
 }
 
 const CommentInputTextarea = {
