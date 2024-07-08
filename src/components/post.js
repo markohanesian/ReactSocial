@@ -4,6 +4,7 @@ import CommentInput from "./CommentInput";
 import { UserContext } from "../contexts/user";
 import Liker from "./Liker";
 import { db } from "../firebase";
+import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 
 const PostStyle = {
   padding: "1rem",
@@ -55,8 +56,8 @@ const BottomActions = {
   display: "flex",
   justifyContent: "center", // Center items horizontally
   alignItems: "center",
-    gap: "1rem",
-  margin: 0
+  gap: "1rem",
+  marginTop: "3rem"
 };
 
 const CommentInputContainer = {
@@ -64,14 +65,15 @@ const CommentInputContainer = {
 };
 
 const DeleteButtonStyle = {
-  position: "absolute",
-  top: "1rem",
-  right: "1rem",
-  backgroundColor: "red",
   color: "white",
   border: "none",
   padding: "0.5rem",
   cursor: "pointer",
+  backgroundColor: "transparent",
+};
+
+const DeleteIconStyle = {
+  fill: "red",
 };
 
 export default function Post({
@@ -105,8 +107,12 @@ export default function Post({
           <p style={PostUserName}>{username}</p>
         </div>
         {isPostOwner && (
-          <button style={DeleteButtonStyle} onClick={handleDelete}>
-            Delete
+          <button
+            style={DeleteButtonStyle}
+            alt="delete post"
+            onClick={handleDelete}
+          >
+            <DeleteOutlineIcon style={DeleteIconStyle} />
           </button>
         )}
       </div>
