@@ -6,7 +6,7 @@ const signOutBtnStyle = {
   fontFamily: "sans-serif",
   fontSize: "16px",
   padding: "10px 20px",
-  border: "1px solid rgb(139, 195, 74)",
+  border: "none",
   backgroundColor: "transparent",
   color: "rgb(139, 195, 74)",
   cursor: "pointer",
