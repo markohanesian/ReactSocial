@@ -1,4 +1,5 @@
-import * as React from 'react';
+import React, { useContext } from 'react';
+import { UserContext } from '../contexts/user';
 import {
   Box,
   Avatar,
@@ -15,6 +16,7 @@ import {
   Settings,
   Logout
 } from '@mui/icons-material';
+import SignOutBtn from './SignOutBtn';
 
 export default function AccountMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -25,11 +27,10 @@ export default function AccountMenu() {
   const handleClose = () => {
     setAnchorEl(null);
   };
+  const [user] = useContext(UserContext).user;
 
   return (
     <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
-      <Typography sx={{ minWidth: 100 }}>Contact</Typography>
-      <Typography sx={{ minWidth: 100 }}>Profile</Typography>
       <Tooltip title="Account settings">
         <IconButton
           onClick={handleClick}
@@ -39,7 +40,7 @@ export default function AccountMenu() {
           aria-haspopup="true"
           aria-expanded={open ? 'true' : undefined}
         >
-          <Avatar sx={{ width: 32, height: 32 }}>M</Avatar>
+          <Avatar sx={{ width: 32, height: 32 }} alt={"avatar"} src={user.photoURL} >M</Avatar>
         </IconButton>
       </Tooltip>
       <Menu
@@ -77,7 +78,7 @@ export default function AccountMenu() {
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
-        <MenuItem onClick={handleClose}>
+        {/* <MenuItem onClick={handleClose}>
           <Avatar /> Profile
         </MenuItem>
         <MenuItem onClick={handleClose}>
@@ -95,12 +96,13 @@ export default function AccountMenu() {
             <Settings fontSize="small" />
           </ListItemIcon>
           Settings
-        </MenuItem>
+        </MenuItem> */}
         <MenuItem onClick={handleClose}>
-          <ListItemIcon>
+          {/* <ListItemIcon>
             <Logout fontSize="small" />
           </ListItemIcon>
-          Logout
+          Logout */}
+          <SignOutBtn />
         </MenuItem>
       </Menu>
     </Box>
