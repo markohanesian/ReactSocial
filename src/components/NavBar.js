@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { UserContext } from '../contexts/user';
 import SignInBtn from "./SignInBtn";
-import SignOutBtn from './SignOutBtn';
 import { Link } from "react-router-dom";
+import ProfileMenu from './ProfileMenu';
 
 const navStyle = {
     display: 'flex',
@@ -29,12 +29,6 @@ const AboutStyle = {
     color: "whitesmoke"
 }
 
-const NavbarImgStyle = {
-    height: '40px',
-    width: '40px',
-    borderRadius: '50%',
-}
-
 export default function NavBar() {
     const [user] = useContext(UserContext).user;
     return (
@@ -43,11 +37,10 @@ export default function NavBar() {
                 <Link to="/" style={LogoStyle}>ReactSocial</Link>
                 <Link to="/about" style={AboutStyle}>about</Link>
             </div>
-            {/* if user is signed in, display avatar in navbar */}
+            {/* if user is signed in, display profile menu in navbar */}
             {user ? 
                 <>
-                    <img alt={"avatar"} style={NavbarImgStyle} src={user.photoURL} />
-                    <SignOutBtn />
+                    <ProfileMenu />
                 </>:
                 <div style={{ width: "110px", marginRight: '1rem'}}><SignInBtn /></div>}
         </div>
