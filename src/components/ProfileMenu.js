@@ -5,17 +5,17 @@ import {
   Avatar,
   Menu,
   MenuItem,
-  ListItemIcon,
-  Divider,
+  // ListItemIcon,
+  // Divider,
   IconButton,
-  Typography,
+  // Typography,
   Tooltip
 } from '@mui/material';
-import {
-  PersonAdd,
-  Settings,
-  Logout
-} from '@mui/icons-material';
+// import {
+//   PersonAdd,
+//   Settings,
+//   Logout
+// } from '@mui/icons-material';
 import SignOutBtn from './SignOutBtn';
 
 export default function AccountMenu() {
