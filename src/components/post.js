@@ -80,12 +80,6 @@ export default function Post({
           <img src={avatar} style={PostProfilePic} alt="user avatar" />
           <p style={PostUserName}>{username}</p>
         </div>
-        {user && <Liker />}
-        {isPostOwner && (
-          <button style={{ backgroundColor: 'red' }} onClick={handleDelete}>
-            Delete
-          </button>
-        )}
       </div>
       <div style={PostCenter}>
         <img src={uploadURL} alt="" style={PostPhotoUrl} />
@@ -103,6 +97,12 @@ export default function Post({
             />
           ))
         : null}
+      {user && <Liker />}
+      {isPostOwner && (
+        <button style={{ backgroundColor: "red" }} onClick={handleDelete}>
+          Delete
+        </button>
+      )}
     </div>
   );
 }
