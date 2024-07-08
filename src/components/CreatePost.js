@@ -15,11 +15,11 @@ const CreatePostStyle = {
   justifyContent: "center",
   alignItems: "center",
   margin: "1rem",
-  padding: "1rem",
   width: "90vw",
   maxWidth: "900px",
-  backgroundColor: "rgb(22,22,22)",
-  borderRadius: "16px",
+  backgroundColor: "transparent",
+  // border: "1px solid #fff",
+  // borderRadius: "12px",
 };
 
 // Sub-div containing text and other elements
@@ -40,14 +40,13 @@ const CreatePostTextArea = {
 // text box where user writes post
 const CreatePostInput = {
   display: "flex",
-  backgroundColor: "whitesmoke",
+  backgroundColor: "transparent",
   resize: "none",
-  border: "none",
   margin: "1rem",
   padding: ".5rem",
   fontWeight: "700",
-  borderRadius: "12px",
-  fontStyle: "italic",
+  border: "none",
+  color: "#fff",
 };
 
 // image preview styling
@@ -64,7 +63,7 @@ const CreatePostBottomBar = {
   alignItems: "center",
   justifyContent: "space-between",
   width: "100%",
-  padding: "2rem",
+  padding: "1rem",
 };
 
 // upload image icon

@@ -7,7 +7,7 @@ const homeStyle = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    backgroundColor: 'rgb(58,63,65)'
+    backgroundColor: '#101010 '
 }
 
 export default function Home() {

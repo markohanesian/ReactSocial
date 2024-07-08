@@ -9,7 +9,7 @@ const navStyle = {
     justifyContent: 'space-between',
     alignItems: 'center',
     width: '100%',
-    backgroundColor: '#161616',
+    backgroundColor: '#101010',
     padding: "1rem"
 }
 
