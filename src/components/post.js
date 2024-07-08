@@ -3,6 +3,7 @@ import Comment from './comment';
 import CommentInput from './CommentInput'
 import { UserContext } from '../contexts/user';
 import Liker from './Liker';
+import { db } from "../firebase";
 
 const PostStyle = {
     padding: '1rem',
@@ -57,34 +58,35 @@ const PostTextCaption = {
 
 }
 
-export default function Post({ avatar, username, id, uploadURL, caption, comments }) {
+export default function Post({ avatar, username, id, uploadURL, caption, comments, onDelete }) {
     const [user] = useContext(UserContext).user;
 
+    const handleDelete = async () => {
+        try {
+            await db.collection('posts').doc(id).delete();
+            onDelete(id);  // Notify parent component to remove the post from the feed
+        } catch (error) {
+            console.error("Error deleting post: ", error);
+        }
+    };
+
     return (
-        // header portion of post
         <div style={PostStyle}>
             <div style={PostHeader}>
                 <div style={PostHeaderLeft}>
                     <img src={avatar} style={PostProfilePic} alt="user avatar" />
                     <p style={PostUserName}>{username}</p>
                 </div>
-                {user ? <Liker /> : <></>}
+                {user ? <><Liker /><button style={{background: 'red'}} onClick={handleDelete}>Delete</button></> : null}
             </div>
-            {/* image portion of post */}
             <div style={PostCenter}>
                 <img src={uploadURL} alt="" style={PostPhotoUrl} />
             </div>
-            {/* text portion of post */}
             <div style={PostText}>
                 <p style={PostTextCaption}>{caption}</p>
             </div>
-            {/* display CommentInput only when user signed in */}
-            {user ? <CommentInput
-                key={1}
-                id={id}
-                comments={comments} /> : <></>}
-            {/* if there are comments, show, if not, show nothing */}
-            {comments ? comments.map((comment) => <Comment username={comment.username} caption={comment.comment} />) : <></>}
+            {user ? <CommentInput key={1} id={id} comments={comments} /> : null}
+            {comments ? comments.map((comment, index) => <Comment key={index} username={comment.username} caption={comment.comment} />) : null}
         </div>
-    )
+    );
 }

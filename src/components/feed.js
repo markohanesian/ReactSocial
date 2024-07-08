@@ -12,31 +12,37 @@ const FeedStyle = {
 export default function Feed() {
   const [posts, setPosts] = useState([]);
 
-  // function to get comments on posts on update
   useEffect(() => {
-    db.collection("posts")
-      // order posts by timestamp in descending order
+    const unsubscribe = db.collection("posts")
       .orderBy('timestamp', 'desc')
       .onSnapshot((snapshot) => {
-        setPosts(snapshot.docs.map((doc) => ({ id: doc.id, post: doc.data() })))
-
+        setPosts(snapshot.docs.map((doc) => ({ id: doc.id, post: doc.data() })));
       });
 
+    // Cleanup subscription on unmount
+    return () => unsubscribe();
   }, []);
+
+  // Handler function to remove post from state
+  const handleDeletePost = (id) => {
+    setPosts(posts.filter(post => post.id !== id));
+  };
 
   return (
     <div style={FeedStyle}>
-      {/* for every post data, return <Post /> component */}
       {posts.map(({ id, post }) => {
-        return <Post
-          key={id}
-          id={id}
-          avatar={post.avatar}
-          username={post.username}
-          uploadURL={post.uploadURL}
-          caption={post.caption}
-          comments={post.comments}
-        />
+        return (
+          <Post
+            key={id}
+            id={id}
+            avatar={post.avatar}
+            username={post.username}
+            uploadURL={post.uploadURL}
+            caption={post.caption}
+            comments={post.comments}
+            onDelete={handleDeletePost}  // Pass the handler function as a prop
+          />
+        );
       })}
     </div>
   );
