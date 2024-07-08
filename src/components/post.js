@@ -19,7 +19,6 @@ const PostHeader = {
   alignItems: "center",
 };
 
-// div containing image and username
 const PostHeaderLeft = {
   display: "flex",
   alignItems: "center",
@@ -35,17 +34,14 @@ const PostProfilePic = {
   borderRadius: "50%",
 };
 
-// div containing image being posted
 const PostCenter = {};
 
 const PostPhotoUrl = {
   width: "100%",
   margin: "1rem 0rem",
-  // this property ensures image won't stretch
   objectFit: "cover",
 };
 
-// div containing username, caption
 const PostText = {
   display: "flex",
   flexDirection: "column",
@@ -62,6 +58,7 @@ export default function Post({
   caption,
   comments,
   onDelete,
+  ownerEmail, // Add this prop
 }) {
   const [user] = useContext(UserContext).user;
 
@@ -74,6 +71,8 @@ export default function Post({
     }
   };
 
+  const isPostOwner = user && user.email === ownerEmail;
+
   return (
     <div style={PostStyle}>
       <div style={PostHeader}>
@@ -81,14 +80,12 @@ export default function Post({
           <img src={avatar} style={PostProfilePic} alt="user avatar" />
           <p style={PostUserName}>{username}</p>
         </div>
-        {user ? (
-          <>
-            <Liker />
-            <button style={{ background: "red" }} onClick={handleDelete}>
-              Delete
-            </button>
-          </>
-        ) : null}
+        {user && <Liker />}
+        {isPostOwner && (
+          <button style={{ backgroundColor: 'red' }} onClick={handleDelete}>
+            Delete
+          </button>
+        )}
       </div>
       <div style={PostCenter}>
         <img src={uploadURL} alt="" style={PostPhotoUrl} />
