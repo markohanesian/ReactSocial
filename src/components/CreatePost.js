@@ -140,6 +140,7 @@ export default function CreatePost() {
                 // makes username from email signed in with google without "@gmail.com"
                 username: user.email.replace("@gmail.com", ""),
                 avatar: user.photoURL,
+                ownerEmail: user.email, // Add ownerEmail field
               });
             });
           // after user posts, remove caption, progress percentage, and image
