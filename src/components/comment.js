@@ -5,7 +5,7 @@ const CommentStyle = {
     flexDirection: 'column',
     marginLeft: '1rem',
     padding: '1rem',
-    backgroundColor: 'whitesmoke'
+    color: "white"
 }
 
 const CommentUser = {

@@ -10,6 +10,7 @@ const ThumbUpButtonClicked = {
 }
 
 const ThumbUpButton = {
+  fill: "white",
   backgroundColor: 'transparent',
   border: 'none',
   padding: '6px',

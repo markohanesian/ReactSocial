@@ -75,7 +75,7 @@ export default function CommentInput({ id, comments }) {
         sx={{ flex: 1 }}
       />
       <Stack direction="row" spacing={1}>
-        <Button variant="contained" color="primary" onClick={addComment}>
+        <Button variant="contained" onClick={addComment} sx={{background: "rgb(139, 195, 74)", color: "black"}}>
           Post
         </Button>
         <Liker />
