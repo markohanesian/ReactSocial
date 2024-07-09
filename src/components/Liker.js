@@ -4,18 +4,15 @@ import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 const ThumbUpButtonClicked = {
   backgroundColor: 'rgb(115, 250, 179)',
   order: 'none',
-  padding: '5px',
-  borderRadius: '5px',
-  margin: '1rem',
+  padding: '6px',
+  borderRadius: '50px',
   fontSize: '2rem'
 }
 
 const ThumbUpButton = {
   backgroundColor: 'transparent',
   border: 'none',
-  padding: '5px',
-  borderRadius: '5px',
-  margin: '1rem',
+  padding: '6px',
   fontSize: '2rem'
 }
 

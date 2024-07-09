@@ -101,7 +101,7 @@ export default function Post({
       {user && (
         <Stack direction="row" spacing={1} justifyContent="center" alignItems="center" mt={3}>
           <Grid container spacing={1}>
-            <Grid item xs={12} sm={8}>
+            <Grid item xs={12} sm={12}>
               <CommentInput key={1} id={id} comments={comments} fullWidth />
             </Grid>
           </Grid>
