@@ -28,7 +28,7 @@ Click "Sign In" to sign in with your Google account to get social!
 * Create post styled to be more visible and user-friendly ✅
 * Create post button disabled when no user text to clarify UX ✅
 * Update feed UI to be mobile responsive ✅
-* Material-UI library redesign
+* Material-UI library redesign ✅
 * User profile and settings 
 * Add author info to about
 
