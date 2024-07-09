@@ -7,24 +7,24 @@ import { styled } from "@mui/system";
 
 // Styled component for custom TextField
 const CustomTextField = styled(TextField)(({ theme }) => ({
-  '& .MuiInputBase-input': {
-    color: 'white', // Text color
+  "& .MuiInputBase-input": {
+    color: "white", // Text color
   },
-  '& .MuiInputLabel-root': {
-    color: 'whitesmoke', // Placeholder text color
+  "& .MuiInputLabel-root": {
+    color: "whitesmoke", // Placeholder text color
   },
-  '& .MuiInputLabel-root.Mui-focused': {
-    color: 'whitesmoke', // Focused placeholder text color
+  "& .MuiInputLabel-root.Mui-focused": {
+    color: "whitesmoke", // Focused placeholder text color
   },
-  '& .MuiOutlinedInput-root': {
-    '& fieldset': {
-      borderColor: 'whitesmoke', // Unfocused border color
+  "& .MuiOutlinedInput-root": {
+    "& fieldset": {
+      borderColor: "whitesmoke", // Unfocused border color
     },
-    '&:hover fieldset': {
-      borderColor: 'whitesmoke', // Hover border color
+    "&:hover fieldset": {
+      borderColor: "whitesmoke", // Hover border color
     },
-    '&.Mui-focused fieldset': {
-      borderColor: 'whitesmoke', // Focused border color
+    "&.Mui-focused fieldset": {
+      borderColor: "whitesmoke", // Focused border color
     },
   },
 }));
@@ -62,9 +62,8 @@ export default function CommentInput({ id, comments }) {
     <Stack
       direction={{ xs: "column", sm: "row" }}
       spacing={2}
-      alignItems="center"
       justifyContent="space-between"
-      sx={{ width: '100%' }}
+      sx={{ width: "100%" }}
     >
       <CustomTextField
         variant="outlined"
@@ -74,8 +73,17 @@ export default function CommentInput({ id, comments }) {
         onChange={(e) => setComment(e.target.value)}
         sx={{ flex: 1 }}
       />
-      <Stack direction="row" spacing={1}>
-        <Button variant="contained" onClick={addComment} sx={{background: "rgb(139, 195, 74)", color: "black"}}>
+      <Stack
+        direction="row"
+        justifyContent="space-between"
+        alignItems="center"
+        spacing={2}
+      >
+        <Button
+          variant="contained"
+          onClick={addComment}
+          sx={{ background: "rgb(139, 195, 74)", color: "black" }}
+        >
           Post
         </Button>
         <Liker />
