@@ -6,7 +6,6 @@ const FeedStyle = {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  backgroundColor: 'rgb(58,63,65)'
 };
 
 export default function Feed() {

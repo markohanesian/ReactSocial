@@ -9,10 +9,10 @@ import { Grid, Stack } from "@mui/material";
 const PostStyle = {
   padding: "1rem",
   margin: "1rem",
-  backgroundColor: "white",
   width: "90vw",
   maxWidth: "600px",
   position: "relative",
+  border: "2px solid rgb(139, 195, 74)"
 };
 
 const PostHeaderLeft = {
@@ -22,6 +22,7 @@ const PostHeaderLeft = {
 
 const PostUserName = {
   marginLeft: "1rem",
+  color: "white"
 };
 
 const PostProfilePic = {
@@ -36,10 +37,11 @@ const PostPhotoUrl = {
   objectFit: "cover",
 };
 
-const PostTextCaption = {};
+const PostTextCaption = {
+  color: "white"
+};
 
 const DeleteButtonStyle = {
-  color: "white",
   border: "none",
   padding: "0.5rem",
   cursor: "pointer",
