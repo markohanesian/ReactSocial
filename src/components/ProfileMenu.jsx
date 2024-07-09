@@ -1,24 +1,10 @@
 import React, { useContext } from 'react';
 import { UserContext } from '../contexts/user';
-import {
-  Box,
-  Avatar,
-  Menu,
-  MenuItem,
-  // ListItemIcon,
-  // Divider,
-  IconButton,
-  // Typography,
-  Tooltip
-} from '@mui/material';
-// import {
-//   PersonAdd,
-//   Settings,
-//   Logout
-// } from '@mui/icons-material';
+import { Box, Avatar, Menu, MenuItem, IconButton, Tooltip } from '@mui/material';
+import MenuButton from './MenuButton';
 import SignOutBtn from './SignOutBtn';
 
-export default function AccountMenu() {
+export default function ProfileMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -40,7 +26,7 @@ export default function AccountMenu() {
           aria-haspopup="true"
           aria-expanded={open ? 'true' : undefined}
         >
-          <Avatar sx={{ width: 32, height: 32 }} alt={"avatar"} src={user.photoURL} >M</Avatar>
+          <Avatar sx={{ width: 32, height: 32 }} alt="avatar" src={user.photoURL}>M</Avatar>
         </IconButton>
       </Tooltip>
       <Menu
@@ -79,30 +65,10 @@ export default function AccountMenu() {
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
-        {/* <MenuItem onClick={handleClose}>
-          <Avatar /> Profile
+        <MenuItem>
+          <MenuButton text="About" to="/about" alt="About Page" />
         </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <Avatar /> My account
-        </MenuItem>
-        <Divider />
-        <MenuItem onClick={handleClose}>
-          <ListItemIcon>
-            <PersonAdd fontSize="small" />
-          </ListItemIcon>
-          Add another account
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <ListItemIcon>
-            <Settings fontSize="small" />
-          </ListItemIcon>
-          Settings
-        </MenuItem> */}
-        <MenuItem onClick={handleClose}>
-          {/* <ListItemIcon>
-            <Logout fontSize="small" />
-          </ListItemIcon>
-          Logout */}
+        <MenuItem>
           <SignOutBtn />
         </MenuItem>
       </Menu>

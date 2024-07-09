@@ -14,9 +14,8 @@ import { UserContextProvider } from './contexts/user';
 const appStyle = {
   display: 'flex',
   flexDirection: 'column',
-  backgroundColor: 'whitesmoke',
-  minHeight: '100vh',
-};
+  backgroundColor: 'whitesmoke'
+}
 
 export default function App() {
   return (

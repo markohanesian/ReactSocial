@@ -21,21 +21,12 @@ const LogoStyle = {
     color: 'rgb(139, 195, 74)',
 }
 
-const AboutStyle = {
-    padding: '0 1rem 0 1rem',
-    textDecoration: 'none',
-    fontSize: '1rem',
-    fontWeight: '800',
-    color: "whitesmoke"
-}
-
 export default function NavBar() {
     const [user] = useContext(UserContext).user;
     return (
         <div style={navStyle}>
             <div>
                 <Link to="/" style={LogoStyle}>ReactSocial</Link>
-                <Link to="/about" style={AboutStyle}>about</Link>
             </div>
             {/* if user is signed in, display profile menu in navbar */}
             {user ? 

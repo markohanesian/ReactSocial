@@ -15,11 +15,10 @@ const SignOutBtn = () => {
 
   return (
     <MenuButton
-      aria-label="Log out of account"
+      text="Logout"
       onClick={handleLogout}
-    >
-      Logout
-    </MenuButton>
+      alt="Log out of account"
+    />
   );
 };
 
