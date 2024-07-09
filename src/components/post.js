@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import Comment from "./comment";
 import CommentInput from "./CommentInput";
 import { UserContext } from "../contexts/user";
-import Liker from "./Liker";
 import { db } from "../firebase";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import { Grid, Stack } from "@mui/material";
@@ -104,9 +103,6 @@ export default function Post({
           <Grid container spacing={1}>
             <Grid item xs={12} sm={8}>
               <CommentInput key={1} id={id} comments={comments} fullWidth />
-            </Grid>
-            <Grid item>
-              <Liker />
             </Grid>
           </Grid>
         </Stack>
