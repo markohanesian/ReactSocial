@@ -5,6 +5,7 @@ import { UserContext } from "../contexts/user";
 import Liker from "./Liker";
 import { db } from "../firebase";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
+import { Grid, Stack } from "@mui/material";
 
 const PostStyle = {
   padding: "1rem",
@@ -13,12 +14,6 @@ const PostStyle = {
   width: "90vw",
   maxWidth: "600px",
   position: "relative",
-};
-
-const PostHeader = {
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "center",
 };
 
 const PostHeaderLeft = {
@@ -36,33 +31,13 @@ const PostProfilePic = {
   borderRadius: "50%",
 };
 
-const PostCenter = {};
-
 const PostPhotoUrl = {
   width: "100%",
   margin: "1rem 0rem",
   objectFit: "cover",
 };
 
-const PostText = {
-  display: "flex",
-  flexDirection: "column",
-  marginBottom: "1rem",
-};
-
 const PostTextCaption = {};
-
-const BottomActions = {
-  display: "flex",
-  justifyContent: "center", // Center items horizontally
-  alignItems: "center",
-  gap: "1rem",
-  marginTop: "3rem"
-};
-
-const CommentInputContainer = {
-  flexGrow: 1,
-};
 
 const DeleteButtonStyle = {
   color: "white",
@@ -101,44 +76,45 @@ export default function Post({
 
   return (
     <div style={PostStyle}>
-      <div style={PostHeader}>
-        <div style={PostHeaderLeft}>
+      <Grid container justifyContent="space-between" alignItems="center">
+        <Grid item style={PostHeaderLeft}>
           <img src={avatar} style={PostProfilePic} alt="user avatar" />
           <p style={PostUserName}>{username}</p>
-        </div>
+        </Grid>
         {isPostOwner && (
-          <button
-            style={DeleteButtonStyle}
-            alt="delete post"
-            onClick={handleDelete}
-          >
-            <DeleteOutlineIcon style={DeleteIconStyle} />
-          </button>
+          <Grid item>
+            <button
+              style={DeleteButtonStyle}
+              alt="delete post"
+              onClick={handleDelete}
+            >
+              <DeleteOutlineIcon style={DeleteIconStyle} />
+            </button>
+          </Grid>
         )}
-      </div>
-      <div style={PostCenter}>
+      </Grid>
+      <div>
         <img src={uploadURL} alt="" style={PostPhotoUrl} />
       </div>
-      <div style={PostText}>
+      <div>
         <p style={PostTextCaption}>{caption}</p>
       </div>
-      {user ? (
-        <div style={BottomActions}>
-          <div style={CommentInputContainer}>
-            <CommentInput key={1} id={id} comments={comments} />
-          </div>
-          <Liker />
-        </div>
-      ) : null}
-      {comments
-        ? comments.map((comment, index) => (
-            <Comment
-              key={index}
-              username={comment.username}
-              caption={comment.comment}
-            />
-          ))
-        : null}
+      {user && (
+        <Stack direction="row" spacing={1} justifyContent="center" alignItems="center" mt={3}>
+          <Grid container spacing={1}>
+            <Grid item xs={12} sm={8}>
+              <CommentInput key={1} id={id} comments={comments} fullWidth />
+            </Grid>
+            <Grid item>
+              <Liker />
+            </Grid>
+          </Grid>
+        </Stack>
+      )}
+      {comments &&
+        comments.map((comment, index) => (
+          <Comment key={index} username={comment.username} caption={comment.comment} />
+        ))}
     </div>
   );
 }
