@@ -15,11 +15,13 @@ const navStyle = {
 };
 
 const navLeftStyle = {
-    display: "flex",
-}
+  display: "flex",
+  alignItems: "center",
+};
 
 const LogoStyle = {
   padding: "0 1rem 0 1rem",
+  marginBottom: "4px",
   fontSize: "1.2rem",
   fontWeight: "800",
   textDecoration: "none",
@@ -34,7 +36,12 @@ export default function NavBar() {
         <Link to="/" style={LogoStyle} alt="navigate to home">
           ReactSocial
         </Link>
-        <MenuButton component="link" text="About" to="/about" alt="About Page" />
+        <MenuButton
+          component="link"
+          text="About"
+          to="/about"
+          alt="About Page"
+        />
       </div>
       {/* if user is signed in, display profile menu in navbar */}
       {user ? (
