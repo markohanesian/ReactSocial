@@ -1,8 +1,8 @@
-import React from 'react';
-import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import React from "react";
+import Stack from "@mui/material/Stack";
+import Button from "@mui/material/Button";
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const MenuButton = ({ text, onClick, to, alt }) => {
   return (
@@ -15,10 +15,12 @@ const MenuButton = ({ text, onClick, to, alt }) => {
           onClick={onClick}
           aria-label={alt}
           sx={{
-            color: 'rgb(139, 195, 74)',
-            '&:hover': {
-              backgroundColor: 'rgb(139, 195, 74)',
-              color: 'black',
+            color: "white",
+            "&.MuiButton-text": {
+              color: "white",
+            },
+            "&:hover": {
+              color: "rgb(139, 195, 74)",
             },
           }}
         >
@@ -30,10 +32,12 @@ const MenuButton = ({ text, onClick, to, alt }) => {
           onClick={onClick}
           aria-label={alt}
           sx={{
-            color: 'rgb(139, 195, 74)',
-            '&:hover': {
-              backgroundColor: 'rgb(139, 195, 74)',
-              color: 'black',
+            color: "white",
+            "&.MuiButton-text": {
+              color: "white",
+            },
+            "&:hover": {
+              color: "rgb(139, 195, 74)",
             },
           }}
         >
