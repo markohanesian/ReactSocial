@@ -8,6 +8,7 @@ import NavBar from './components/NavBar';
 import FooterBar from './components/FooterBar';
 import Home from "./components/home";
 import About from './components/about';
+import PostsPage from './components/PostPage';
 import SignedOut from './components/SignedOut';
 import { UserContextProvider } from './contexts/user';
 
@@ -29,6 +30,9 @@ export default function App() {
             </Route>
             <Route path="/about">
               <About />
+            </Route>
+            <Route path="/posts">
+              <PostsPage />
             </Route>
             <Route path="/">
               <Home />
