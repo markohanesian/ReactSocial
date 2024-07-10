@@ -1,6 +1,38 @@
 import React, { useState, useContext } from "react";
 import { UserContext } from "../contexts/user";
-import { signInWithGoogle } from "../services/auth";
+import { Button } from "@mui/material";
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+
+const SignInBtn = () => {
+  const [, setUser] = useContext(UserContext).user;
+  const [isHovered, setIsHovered] = useState(false);
+
+  const provider = new GoogleAuthProvider();
+  const firebaseAuth = getAuth();
+
+  const handleLogin = async () => {
+    try {
+      const result = await signInWithPopup(firebaseAuth, provider);
+      setUser(result.user);
+    } catch (error) {
+      console.error("Error signing in with Google:", error.message);
+      // Handle error here
+    }
+  };
+
+  return (
+    <Button
+      variant="outlined"
+      style={isHovered ? { ...signInBtnStyle, ...hoverStyle } : signInBtnStyle}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      aria-label="sign in with Google"
+      onClick={handleLogin}
+    >
+      Logout
+    </Button>
+  );
+};
 
 const signInBtnStyle = {
   fontFamily: "sans-serif",
@@ -16,28 +48,6 @@ const signInBtnStyle = {
 const hoverStyle = {
   backgroundColor: "rgb(139, 195, 74)",
   color: "black",
-};
-
-const SignInBtn = () => {
-  const [, setUser] = useContext(UserContext).user;
-  const [isHovered, setIsHovered] = useState(false);
-
-  const handleLogin = async () => {
-    const user = await signInWithGoogle();
-    setUser(user);
-  };
-
-  return (
-    <button
-      style={isHovered ? { ...signInBtnStyle, ...hoverStyle } : signInBtnStyle}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      aria-label="sign in"
-      onClick={handleLogin}
-    >
-      Login
-    </button>
-  );
 };
 
 export default SignInBtn;
