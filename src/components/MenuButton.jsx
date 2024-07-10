@@ -1,12 +1,11 @@
 import React from "react";
-import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 const MenuButton = ({ text, onClick, to, alt }) => {
   return (
-    <Stack spacing={2} direction="row">
+    <>
       {to ? (
         <Button
           variant="text"
@@ -21,6 +20,9 @@ const MenuButton = ({ text, onClick, to, alt }) => {
             },
             "&:hover": {
               color: "rgb(139, 195, 74)",
+            },
+            "&.MuiButtonbase-root": {
+              display: "flex",
             },
           }}
         >
@@ -39,12 +41,15 @@ const MenuButton = ({ text, onClick, to, alt }) => {
             "&:hover": {
               color: "rgb(139, 195, 74)",
             },
+            "&.MuiButtonbase-root": {
+              display: "flex",
+            },
           }}
         >
           {text}
         </Button>
       )}
-    </Stack>
+    </>
   );
 };
 
