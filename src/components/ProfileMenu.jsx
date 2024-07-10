@@ -64,6 +64,13 @@ export default function ProfileMenu() {
         }}
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+        sx={{
+          ".MuiList-root": {
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-start"
+          }
+        }}
       >
         <MenuItem>
           <MenuButton text="About" to="/about" alt="About Page" />
