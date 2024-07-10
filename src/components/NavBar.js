@@ -3,6 +3,7 @@ import { UserContext } from "../contexts/user";
 import SignInBtn from "./SignInBtn";
 import { Link } from "react-router-dom";
 import ProfileMenu from "./ProfileMenu";
+import MenuButton from "./MenuButton";
 
 const navStyle = {
   display: "flex",
@@ -13,6 +14,10 @@ const navStyle = {
   padding: "1rem",
 };
 
+const navLeftStyle = {
+    display: "flex",
+}
+
 const LogoStyle = {
   padding: "0 1rem 0 1rem",
   fontSize: "1.2rem",
@@ -21,25 +26,15 @@ const LogoStyle = {
   color: "rgb(139, 195, 74)",
 };
 
-const AboutStyle = {
-    padding: "0 1rem 0 1rem",
-    fontSize: "1rem",
-    fontWeight: "800",
-    textDecoration: "none",
-    color: "white",
-  };
-
 export default function NavBar() {
   const [user] = useContext(UserContext).user;
   return (
     <div style={navStyle}>
-      <div>
+      <div style={navLeftStyle}>
         <Link to="/" style={LogoStyle} alt="navigate to home">
           ReactSocial
         </Link>
-        <Link style={AboutStyle} to="about" alt="navigate to about">
-          About
-        </Link>
+        <MenuButton component="link" text="About" to="/about" alt="About Page" />
       </div>
       {/* if user is signed in, display profile menu in navbar */}
       {user ? (
