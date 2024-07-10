@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Post from "./post";
 import { db } from "../firebase";
 import { collection, getDocs, query, orderBy } from "firebase/firestore";
+import CreatePost from "./CreatePost";
 
 const FeedStyle = {
   display: 'flex',
@@ -57,6 +58,7 @@ const Feed = () => {
 
   return (
     <div style={FeedStyle}>
+      <CreatePost />
       {posts.map(({ id, post, ownerId }) => (
         <Post
           key={id}
