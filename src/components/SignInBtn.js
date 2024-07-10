@@ -29,7 +29,7 @@ const SignInBtn = () => {
       aria-label="sign in with Google"
       onClick={handleLogin}
     >
-      Logout
+      Login
     </Button>
   );
 };
