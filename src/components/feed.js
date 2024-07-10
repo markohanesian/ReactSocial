@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Post from "./post"; // Update path as per your project structure
+import Post from "./post";
 import { db } from "../firebase";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, query, orderBy } from "firebase/firestore";
 
 const FeedStyle = {
   display: 'flex',
@@ -17,12 +17,16 @@ const Feed = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const querySnapshot = await getDocs(collection(db, "posts"));
+        // Create a query with ordering by 'timestamp' in descending order
+        const q = query(collection(db, "posts"), orderBy('timestamp', 'desc'));
+        const querySnapshot = await getDocs(q);
+        
         const postsData = querySnapshot.docs.map((doc) => ({
           id: doc.id,
           post: doc.data(),
           ownerId: doc.data().ownerEmail // Adjust according to your data structure
         }));
+
         setPosts(postsData);
         setLoading(false);
       } catch (error) {
