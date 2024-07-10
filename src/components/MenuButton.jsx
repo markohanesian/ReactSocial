@@ -43,6 +43,7 @@ const MenuButton = ({ text, onClick, to, alt }) => {
             },
             "&.MuiButtonbase-root": {
               display: "flex",
+              alignItems: "flex-start"
             },
           }}
         >
