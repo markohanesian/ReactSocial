@@ -7,8 +7,8 @@ const aboutStyle = {
     flexDirection: 'column',
     alignItems: 'flex-start',
     padding: '2rem',
-    backgroundColor: 'white',
-    margin: '1rem 0 0 0'
+    backgroundColor: "#101010",
+    color: "white",
 }
 
 const AboutParagraph = {
