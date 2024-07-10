@@ -1,10 +1,10 @@
 import React, { useContext, useState } from "react";
 import { UserContext } from "../contexts/user";
-// icon for photo upload button
 import { Fab, Tooltip, Button } from "@material-ui/core";
 import AddAPhotoIcon from "@material-ui/icons/AddAPhoto";
-import firebase from "firebase";
-import { db, storage } from "../firebase";
+import { db, storage } from "../firebase"; 
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import makeId from "./helper/functions";
 import HeaderNewUser from "./HeaderNewUser";
 
@@ -18,8 +18,6 @@ const CreatePostStyle = {
   width: "90vw",
   maxWidth: "900px",
   backgroundColor: "transparent",
-  // border: "1px solid #fff",
-  // borderRadius: "12px",
 };
 
 // Sub-div containing text and other elements
@@ -90,6 +88,7 @@ export default function CreatePost() {
   const [image, setImage] = useState(null);
   const [progress, setProgress] = useState(0);
   const [userInput, setUserInput] = useState("");
+  
   // choose file button function
   const handleChange = (e) => {
     setUserInput(e.target.value);
@@ -109,15 +108,13 @@ export default function CreatePost() {
   // function for uploading images, creating storage ID, progress, error handling
   const handleUpload = () => {
     if (image) {
-      // variable imported from functions.js
       var imageName = makeId(10);
-      // image storage location
-      const uploadTask = storage.ref(`images/${imageName}.jpg`).put(image);
-      // will give update when task is completed
+      const imageRef = ref(storage, `images/${imageName}.jpg`);
+      const uploadTask = uploadBytesResumable(imageRef, image);
+
       uploadTask.on(
         "state_changed",
         (snapshot) => {
-          // progress function with percentage
           const progress = Math.round(
             (snapshot.bytesTransferred / snapshot.totalBytes) * 100
           );
@@ -127,28 +124,20 @@ export default function CreatePost() {
           console.log(error);
         },
         () => {
-          // get download url and upload the post info
-          storage
-            .ref("images")
-            .child(`${imageName}.jpg`)
-            .getDownloadURL()
-            .then((imageUrl) => {
-              db.collection("posts").add({
-                timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-                caption: caption,
-                uploadURL: imageUrl,
-                // makes username from email signed in with google without "@gmail.com"
-                username: user.email.replace("@gmail.com", ""),
-                avatar: user.photoURL,
-                ownerEmail: user.email, // Add ownerEmail field
-              });
+          getDownloadURL(uploadTask.snapshot.ref).then((imageUrl) => {
+            addDoc(collection(db, "posts"), {
+              timestamp: serverTimestamp(),
+              caption: caption,
+              uploadURL: imageUrl,
+              username: user.email.replace("@gmail.com", ""),
+              avatar: user.photoURL,
+              ownerEmail: user.email,
             });
-          // after user posts, remove caption, progress percentage, and image
+          });
+
           setCaption("");
           setProgress(0);
           setImage(null);
-
-          // hides image preview after uploading
           document.getElementById("image-preview").style.display = "none";
         }
       );
@@ -157,7 +146,6 @@ export default function CreatePost() {
 
   return (
     <div style={CreatePostStyle}>
-      {/* if user exists, post. If not, sign in */}
       {user ? (
         <div style={CreatePostContainer}>
           <div style={CreatePostTextArea}>
@@ -169,7 +157,6 @@ export default function CreatePost() {
               onChange={(e) => setCaption(e.target.value)}
             ></textarea>
             <div style={CreatePostImagePreview}>
-              {/* img styled inline so that it is hidden by default */}
               <img
                 style={{ display: "none", height: "8rem" }}
                 id="image-preview"
