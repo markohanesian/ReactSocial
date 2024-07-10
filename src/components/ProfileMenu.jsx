@@ -73,7 +73,13 @@ export default function ProfileMenu() {
         }}
       >
         <MenuItem>
+          <MenuButton text="Feed" to="/feed" alt="Feed page" />
+        </MenuItem>
+        <MenuItem>
           <MenuButton text="About" to="/about" alt="About Page" />
+        </MenuItem>
+        <MenuItem>
+          <MenuButton text="Posts" to="/posts" alt="User Posts" />
         </MenuItem>
         <MenuItem>
           <SignOutBtn />
