@@ -62,7 +62,7 @@ export default function Post({
   onDelete,
   ownerEmail,
 }) {
-  const [user] = useContext(UserContext).user;
+  const { user } = useContext(UserContext); // Destructure user from context
 
   const handleDelete = async () => {
     try {
