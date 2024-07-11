@@ -40,13 +40,13 @@ export default function PostsPage() {
 
   return (
     <div style={{ padding: "2rem", backgroundColor: "#101010", color: "white" }}>
-      <h1>Posts</h1>
+      <h1 style={{marginBottom: "2rem", fontSize: "2.5rem"}}>My Posts</h1>
       {posts.length > 0 ? (
         posts.map((post) => (
           <div key={post.id} style={{ marginBottom: "1rem" }}>
             <h2>{post.caption}</h2>
             <p>{new Date(post.timestamp.toDate()).toLocaleString()}</p>
-            <a href={`/posts/${post.id}`} style={{ color: "rgb(139, 195, 74)" }}>
+            <a href={post.uploadURL} style={{ color: "rgb(139, 195, 74)" }}>
               View Post
             </a>
           </div>
