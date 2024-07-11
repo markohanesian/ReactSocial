@@ -3,6 +3,7 @@ import Comment from "./comment";
 import CommentInput from "./CommentInput";
 import { UserContext } from "../contexts/user";
 import { db } from "../firebase";
+import { doc, deleteDoc } from "firebase/firestore";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import { Grid, Stack } from "@mui/material";
 
@@ -66,7 +67,8 @@ export default function Post({
 
   const handleDelete = async () => {
     try {
-      await db.collection("posts").doc(id).delete();
+      const postRef = doc(db, "posts", id);
+      await deleteDoc(postRef);
       onDelete(id); // Notify parent component to remove the post from the feed
     } catch (error) {
       console.error("Error deleting post: ", error);
