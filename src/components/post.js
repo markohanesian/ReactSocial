@@ -67,7 +67,7 @@ export default function Post({
   const userEmail = user && user.length > 0 ? user[0].email : null;
 
   // console.log("Owner Email:", ownerEmail); // Log ownerEmail to verify in the browser console
-  console.log("User email:", userEmail); // Log user to verify in the browser console
+  // console.log("User email:", userEmail); // Log user to verify in the browser console
 
   const handleDelete = async () => {
     try {
