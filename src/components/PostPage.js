@@ -6,12 +6,18 @@ import { collection, query, where, getDocs } from "firebase/firestore";
 export default function PostsPage() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const { user } = useContext(UserContext).user;
+  const { user } = useContext(UserContext);
 
   useEffect(() => {
     const fetchPosts = async () => {
+      if (!user || !user[0]) {
+        setLoading(false);
+        return;
+      }
+
       try {
-        const q = query(collection(db, "posts"), where("email", "==", user.email));
+        const q = query(collection(db, "posts"), where("ownerEmail", "==", user[0].email));
+        console.log("Firestore Query:", q); // Log Firestore query
         const querySnapshot = await getDocs(q);
         const userPosts = querySnapshot.docs.map((doc) => ({
           id: doc.id,
@@ -20,13 +26,12 @@ export default function PostsPage() {
         setPosts(userPosts);
         setLoading(false);
       } catch (error) {
-        console.error("Error fetching posts: ", error);
+        console.error("Error fetching posts:", error); // Log fetch error
+        setLoading(false); // Ensure loading state is properly managed
       }
     };
 
-    if (user) {
-      fetchPosts();
-    }
+    fetchPosts();
   }, [user]);
 
   if (loading) {
