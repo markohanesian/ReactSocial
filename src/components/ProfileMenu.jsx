@@ -79,7 +79,7 @@ export default function ProfileMenu() {
           <MenuButton text="About" to="/about" alt="About Page" />
         </MenuItem>
         <MenuItem>
-          <MenuButton text="Posts" to="/posts" alt="User Posts" />
+          <MenuButton text="My Posts" to="/posts" alt="User Posts" />
         </MenuItem>
         <MenuItem>
           <SignOutBtn />
