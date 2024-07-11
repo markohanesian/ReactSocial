@@ -33,6 +33,7 @@ export default function CreatePost() {
       imagePreview.src = selectedImageSrc;
       imagePreview.style.display = "block";
     }
+    
   };
 
   const handleUpload = () => {
@@ -61,15 +62,17 @@ export default function CreatePost() {
               uploadURL: imageUrl,
               username: user.email.replace("@gmail.com", ""),
               avatar: user.photoURL,
+              // Ensure ownerEmail is set to user's email
               ownerEmail: user.email,
             });
-
             setCaption("");
             setProgress(0);
             setImage(null);
             document.getElementById("image-preview").style.display = "none";
             setLoading(false);
+            
           });
+          
         }
       );
     }

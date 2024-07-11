@@ -23,7 +23,7 @@ const Feed = () => {
           const postsData = querySnapshot.docs.map((doc) => ({
             id: doc.id,
             post: doc.data(),
-            ownerId: doc.data().ownerEmail // Adjust according to your data structure
+            ownerEmail: doc.data().ownerEmail, // Ensure ownerEmail is included
           }));
 
           setPosts(postsData);
@@ -55,7 +55,7 @@ const Feed = () => {
   return (
     <div style={FeedStyle}>
       <CreatePost />
-      {posts.map(({ id, post, ownerId }) => (
+      {posts.map(({ id, post, ownerEmail }) => (
         <Post
           key={id}
           id={id}
@@ -65,7 +65,7 @@ const Feed = () => {
           caption={post.caption}
           comments={post.comments}
           onDelete={handleDeletePost}
-          ownerId={ownerId} // Pass ownerId to Post component
+          ownerEmail={ownerEmail} // Pass ownerEmail to Post component
         />
       ))}
     </div>

@@ -64,6 +64,10 @@ export default function Post({
   ownerEmail,
 }) {
   const { user } = useContext(UserContext); // Destructure user from context
+  const userEmail = user && user.length > 0 ? user[0].email : null;
+
+  // console.log("Owner Email:", ownerEmail); // Log ownerEmail to verify in the browser console
+  console.log("User email:", userEmail); // Log user to verify in the browser console
 
   const handleDelete = async () => {
     try {
@@ -75,7 +79,7 @@ export default function Post({
     }
   };
 
-  const isPostOwner = user && user.email === ownerEmail;
+  const isPostOwner = user && userEmail === ownerEmail;
 
   return (
     <div style={PostStyle}>
