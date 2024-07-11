@@ -9,6 +9,7 @@ import "firebase/firestore";
 const firebaseConfig = {
   apiKey: "AIzaSyCy49QJAEVPPURcw1wPnrR5yaF0Gu-GFlc",
   authDomain: "social-media-app-mso.firebaseapp.com",
+  databaseURL: "https://social-media-app-mso-default-rtdb.firebaseio.com",
   projectId: "social-media-app-mso",
   storageBucket: "social-media-app-mso.appspot.com",
   messagingSenderId: "267213391628",
