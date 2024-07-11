@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Post from "./post";
 import { db } from "../firebase";
-import { collection, getDocs, query, orderBy } from "firebase/firestore";
+import { collection, onSnapshot, query, orderBy } from "firebase/firestore";
 import CreatePost from "./CreatePost";
 
 const FeedStyle = {
@@ -16,20 +16,19 @@ const Feed = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchPosts = async () => {
+    const fetchPosts = () => {
       try {
-        // Create a query with ordering by 'timestamp' in descending order
         const q = query(collection(db, "posts"), orderBy('timestamp', 'desc'));
-        const querySnapshot = await getDocs(q);
-        
-        const postsData = querySnapshot.docs.map((doc) => ({
-          id: doc.id,
-          post: doc.data(),
-          ownerId: doc.data().ownerEmail // Adjust according to your data structure
-        }));
+        onSnapshot(q, (querySnapshot) => {
+          const postsData = querySnapshot.docs.map((doc) => ({
+            id: doc.id,
+            post: doc.data(),
+            ownerId: doc.data().ownerEmail // Adjust according to your data structure
+          }));
 
-        setPosts(postsData);
-        setLoading(false);
+          setPosts(postsData);
+          setLoading(false);
+        });
       } catch (error) {
         setError(error);
         setLoading(false);
@@ -38,9 +37,6 @@ const Feed = () => {
     };
 
     fetchPosts();
-
-    // Clean-up function for unsubscribing from snapshot listener if necessary
-    // return () => unsubscribe();
   }, []);
 
   const handleDeletePost = (id) => {
