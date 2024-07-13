@@ -23,14 +23,14 @@ Click "Sign In" to sign in with your Google account to get social!
 
 ✅ = fixed
 
+* User posts page links to entire post
 * Delete your own posts! ✅
 * Persistant auth state so users stay signed in on page refresh ✅
 * Create post styled to be more visible and user-friendly ✅
 * Create post button disabled when no user text to clarify UX ✅
 * Update feed UI to be mobile responsive ✅
 * Material-UI library redesign ✅
-* User profile and settings 
-* Add author info to about
+* Expand on project in about section✅
 
 ## Authors
 * [Mark Ohanesian](https://github.com/markohanesian) 
