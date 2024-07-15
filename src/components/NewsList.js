@@ -3,7 +3,7 @@ import axios from 'axios';
 // NewsItem component to display new articles
 import NewsItem from './NewsItem';
 
-const NewsList = () => {
+export default function NewsList() {
     // When no articles, nothing will be shown
     const [articles, setArticles] = useState([]);
 
@@ -33,4 +33,4 @@ const NewsList = () => {
     )
 }
 
-export default NewsList;
+
