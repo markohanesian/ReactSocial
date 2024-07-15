@@ -23,7 +23,7 @@ export default function FeedPage() {
           const postsData = querySnapshot.docs.map((doc) => ({
             id: doc.id,
             post: doc.data(),
-            ownerEmail: doc.data().ownerEmail, // Ensure ownerEmail is included
+            ownerEmail: doc.data().ownerEmail, 
           }));
 
           setPosts(postsData);
@@ -41,15 +41,14 @@ export default function FeedPage() {
 
   const handleDeletePost = (id) => {
     setPosts(posts.filter(post => post.id !== id));
-    // Implement deletion logic if needed
   };
 
   if (loading) {
-    return <p>Loading...</p>; // Optional: Show a loading indicator
+    return <p>Loading...</p>; 
   }
 
   if (error) {
-    return <p>Error fetching posts. Please try again later.</p>; // Optional: Show an error message
+    return <p>Error fetching posts. Please try again later.</p>; 
   }
 
   return (
@@ -65,7 +64,7 @@ export default function FeedPage() {
           caption={post.caption}
           comments={post.comments}
           onDelete={handleDeletePost}
-          ownerEmail={ownerEmail} // Pass ownerEmail to Post component
+          ownerEmail={ownerEmail} 
         />
       ))}
     </div>

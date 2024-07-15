@@ -17,7 +17,7 @@ export default function UserPostsPage() {
 
       try {
         const q = query(collection(db, "posts"), where("ownerEmail", "==", user[0].email));
-        console.log("Firestore Query:", q); // Log Firestore query
+        console.log("Firestore Query:", q); 
         const querySnapshot = await getDocs(q);
         const userPosts = querySnapshot.docs.map((doc) => ({
           id: doc.id,
@@ -26,8 +26,8 @@ export default function UserPostsPage() {
         setPosts(userPosts);
         setLoading(false);
       } catch (error) {
-        console.error("Error fetching posts:", error); // Log fetch error
-        setLoading(false); // Ensure loading state is properly managed
+        console.error("Error fetching posts:", error); 
+        setLoading(false); 
       }
     };
 

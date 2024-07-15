@@ -63,17 +63,14 @@ export default function Post({
   onDelete,
   ownerEmail,
 }) {
-  const { user } = useContext(UserContext); // Destructure user from context
+  const { user } = useContext(UserContext); 
   const userEmail = user && user.length > 0 ? user[0].email : null;
-
-  // console.log("Owner Email:", ownerEmail); // Log ownerEmail to verify in the browser console
-  // console.log("User email:", userEmail); // Log user to verify in the browser console
 
   const handleDelete = async () => {
     try {
       const postRef = doc(db, "posts", id);
       await deleteDoc(postRef);
-      onDelete(id); // Notify parent component to remove the post from the feed
+      onDelete(id); 
     } catch (error) {
       console.error("Error deleting post: ", error);
     }

@@ -1,5 +1,4 @@
 import React from "react";
-// components
 import MenuButton from "../components/MenuButton";
 import Typography from "@mui/material/Typography";
 

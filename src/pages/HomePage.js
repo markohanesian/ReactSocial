@@ -15,7 +15,6 @@ export default function HomePage() {
   const [user] = useContext(UserContext).user;
   return (
     <div style={homeStyle}>
-      {/* if user is signed in, display feed */}
       {user ? (
         <>
           <Feed />

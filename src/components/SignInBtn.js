@@ -16,7 +16,6 @@ const SignInBtn = () => {
       setUser(result.user);
     } catch (error) {
       console.error("Error signing in with Google:", error.message);
-      // Handle error here
     }
   };
 
