@@ -3,7 +3,7 @@ import { UserContext } from "../contexts/user";
 import { logout } from "../services/auth";
 import MenuButton from "./MenuButton";
 
-const SignOutBtn = () => {
+export default function SignOutBtn() {
   const [, setUser] = useContext(UserContext).user;
 
   const handleLogout = async () => {
@@ -22,4 +22,3 @@ const SignOutBtn = () => {
   );
 };
 
-export default SignOutBtn;
