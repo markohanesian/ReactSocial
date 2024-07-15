@@ -7,13 +7,16 @@
 ## Description
 A social media app featuring the ability to post text and images, and comment on user posts
 
-## User Story
-I need a social media app that I can use to login, post images and text, and comment on other users' posts online 
-
 ## Instructions
-Click "Sign In" to sign in with your Google account to get social!
+Sign into the website with your Google account, and post a message and photo - think of it like a virtual social group where you can share your interests and recent life moments. If you're not happy with your post, you can delete it. Whatever you post, I'll be sure to leave a comment.
 
-## Built With
+## About
+I developed ReactSocial as a custom social media platform to interact with friends and family by sharing images and posting about various topics for fun. The application is built using React for the frontend, with Firebase handling the backend, including authentication, Firestore for the database, and hosting. Material-UI is used extensively to ensure a modern and accessible UI/UX.
+
+### Process
+Building ReactSocial involved several major steps. Initially, I set up the React frontend and integrated Firebase for authentication and database management. Upgrading Firebase required significant refactoring to align with the new APIs and features. Integrating Material-UI was another key step, which involved reworking the styling approach to leverage its theming and component library effectively. Additionally, ensuring seamless and secure user interactions required troubleshooting complex user state and authentication flows.
+
+### Built With
 * React
 * Firebase
 * React-Router
@@ -22,8 +25,9 @@ Click "Sign In" to sign in with your Google account to get social!
 ## Planned Features/Outstanding Issues
 
 ✅ = fixed
+🚧 = in progress
 
-* User posts page links to entire post
+* User posts page links to entire post 🚧
 * Delete your own posts! ✅
 * Persistant auth state so users stay signed in on page refresh ✅
 * Create post styled to be more visible and user-friendly ✅
