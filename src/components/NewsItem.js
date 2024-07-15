@@ -38,7 +38,7 @@ const ReadMoreLink = {
     borderRadius: '5px'
 }
 
-const NewsItem = ({title, description, url, urlToImage}) => {
+export default function NewsItem({title, description, url, urlToImage}) {
     return (
         <div style={NewsItemContainer}>
             <img style={ImageStyle} src={urlToImage} alt="New Article Preview" />
@@ -49,4 +49,4 @@ const NewsItem = ({title, description, url, urlToImage}) => {
     )
 }
 
-export default NewsItem
+
