@@ -17,7 +17,7 @@ const ThumbUpButton = {
   fontSize: '2rem'
 }
 
-const Liker = () => {
+export default function Liker() {
   const [thumb, setThumbUp] = useState(false);
 
   return (
@@ -34,5 +34,3 @@ const Liker = () => {
     </>
   );
 }
-
-export default Liker;
