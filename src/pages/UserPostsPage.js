@@ -3,7 +3,7 @@ import { UserContext } from "../contexts/user";
 import { db } from "../firebase"; 
 import { collection, query, where, getDocs } from "firebase/firestore";
 
-export default function PostsPage() {
+export default function UserPostsPage() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const { user } = useContext(UserContext);

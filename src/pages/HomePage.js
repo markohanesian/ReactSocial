@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import CreatePost from "./CreatePost";
-import Feed from "./feed";
+import CreatePost from "../components/CreatePost";
+import Feed from "./FeedPage";
 import { UserContext } from "../contexts/user";
-import HeaderNewUser from "./HeaderNewUser";
+import HeaderNewUser from "../components/HeaderNewUser";
 
 const homeStyle = {
   display: "flex",
@@ -11,7 +11,7 @@ const homeStyle = {
   backgroundColor: "#101010",
 };
 
-export default function Home() {
+export default function HomePage() {
   const [user] = useContext(UserContext).user;
   return (
     <div style={homeStyle}>

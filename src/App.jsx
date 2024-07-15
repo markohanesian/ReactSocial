@@ -1,22 +1,18 @@
-import './App.css';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
-import NavBar from './components/NavBar';
-import FooterBar from './components/FooterBar';
-import Home from "./components/home";
-import About from './components/about';
-import PostsPage from './components/PostPage';
-import SignedOut from './components/SignedOut';
-import { UserContextProvider } from './contexts/user';
+import "./App.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import NavBar from "./components/NavBar";
+import FooterBar from "./components/FooterBar";
+import HomePage from "./pages/HomePage";
+import AboutPage from "./pages/AboutPage";
+import UserPostsPage from "./pages/UserPostsPage";
+import SignedOut from "./components/SignedOut";
+import { UserContextProvider } from "./contexts/user";
 
 const appStyle = {
-  display: 'flex',
-  flexDirection: 'column',
-  backgroundColor: 'whitesmoke'
-}
+  display: "flex",
+  flexDirection: "column",
+  backgroundColor: "whitesmoke",
+};
 
 export default function App() {
   return (
@@ -29,13 +25,13 @@ export default function App() {
               <SignedOut />
             </Route>
             <Route path="/about">
-              <About />
+              <AboutPage />
             </Route>
             <Route path="/posts">
-              <PostsPage />
+              <UserPostsPage />
             </Route>
             <Route path="/">
-              <Home />
+              <HomePage />
             </Route>
           </Switch>
           <FooterBar />

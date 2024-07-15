@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import Post from "./post";
+import Post from "../components/post";
 import { db } from "../firebase";
 import { collection, onSnapshot, query, orderBy } from "firebase/firestore";
-import CreatePost from "./CreatePost";
+import CreatePost from "../components/CreatePost";
 
 const FeedStyle = {
   display: 'flex',
@@ -10,7 +10,7 @@ const FeedStyle = {
   alignItems: 'center',
 };
 
-const Feed = () => {
+export default function FeedPage() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -71,5 +71,3 @@ const Feed = () => {
     </div>
   );
 };
-
-export default Feed;
