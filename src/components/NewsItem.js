@@ -1,6 +1,5 @@
 import React from 'react'
 
-// styling
 const NewsItemContainer = {
     display: 'flex',
     flexDirection: 'column',
@@ -42,7 +41,6 @@ const ReadMoreLink = {
 const NewsItem = ({title, description, url, urlToImage}) => {
     return (
         <div style={NewsItemContainer}>
-            {/* article preview image, headline, description */}
             <img style={ImageStyle} src={urlToImage} alt="New Article Preview" />
             <h3 style={LinkStyle} href={url}>{title}</h3>
             <p style={LinkCaption}>{description}</p>
