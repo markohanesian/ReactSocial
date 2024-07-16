@@ -18,7 +18,6 @@ export default function HomePage() {
       {user ? (
         <>
           <Feed />
-          <CreatePost />
         </>
       ) : (
         <HeaderNewUser />
