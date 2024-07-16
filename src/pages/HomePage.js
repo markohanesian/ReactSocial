@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import CreatePost from "../components/CreatePost";
 import Feed from "./FeedPage";
 import { UserContext } from "../contexts/user";
 import HeaderNewUser from "../components/HeaderNewUser";
