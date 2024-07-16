@@ -65,13 +65,14 @@ export default function CommentInput({ id, comments }) {
       justifyContent="space-between"
       sx={{ width: "100%" }}
     >
-      <CustomTextField
+      <TextField
         variant="outlined"
         placeholder="Add a comment..."
         fullWidth
         value={comment}
         onChange={(e) => setComment(e.target.value)}
         sx={{ flex: 1 }}
+        label="Comment"
       />
       <Stack
         direction="row"
@@ -83,6 +84,7 @@ export default function CommentInput({ id, comments }) {
           variant="contained"
           onClick={addComment}
           sx={{ background: "rgb(139, 195, 74)", color: "black" }}
+          aria-label="Post comment"
         >
           Post
         </Button>

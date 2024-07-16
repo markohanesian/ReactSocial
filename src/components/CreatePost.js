@@ -33,7 +33,6 @@ export default function CreatePost() {
       imagePreview.src = selectedImageSrc;
       imagePreview.style.display = "block";
     }
-    
   };
 
   const handleUpload = () => {
@@ -70,9 +69,7 @@ export default function CreatePost() {
             setImage(null);
             document.getElementById("image-preview").style.display = "none";
             setLoading(false);
-            
           });
-          
         }
       );
     }
@@ -88,7 +85,11 @@ export default function CreatePost() {
           alignItems="center"
           sx={{ width: "100%", maxWidth: "600px" }}
         >
+          <label htmlFor="post-caption" style={{ display: "none" }}>
+            Write here to post to the feed
+          </label>
           <textarea
+            id="post-caption"
             style={{
               display: "flex",
               backgroundColor: "transparent",
@@ -104,6 +105,7 @@ export default function CreatePost() {
             placeholder="Write something to post to the feed, and add an image if you have one to share..."
             value={caption}
             onChange={(e) => setCaption(e.target.value)}
+            aria-label="Write here to post to the feed"
           />
           <Box
             component="div"
@@ -130,22 +132,24 @@ export default function CreatePost() {
                 sx={{
                   "&.MuiButtonBase-root": {
                     backgroundColor: "#fff",
-                    height: "56px"
+                    height: "56px",
                   },
                   "&:hover": {
                     backgroundColor: "rgb(139, 195, 74)",
                   },
                 }}
               >
-                <label htmlFor="file-input">
-                  <AddAPhotoIcon
-                    sx={{
-                      cursor: "pointer",
-                      fontSize: "2rem",
-                      height: "120px",
-                    }}
-                  />
+                <label htmlFor="file-input" style={{ display: "none" }}>
+                  Add Image
                 </label>
+                <AddAPhotoIcon
+                  sx={{
+                    cursor: "pointer",
+                    fontSize: "2rem",
+                    height: "120px",
+                  }}
+                  aria-hidden="true"
+                />
               </Fab>
             </Tooltip>
 
@@ -162,7 +166,7 @@ export default function CreatePost() {
                 "&.MuiButtonBase-root": {
                   backgroundColor: "#fff",
                   color: "black",
-                  height: "56px"
+                  height: "56px",
                 },
                 "&:hover": {
                   backgroundColor: "rgb(139, 195, 74)",

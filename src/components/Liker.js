@@ -28,6 +28,7 @@ export default function Liker() {
           backgroundColor: 'transparent'
         }}
         onClick={() => setThumbUp(thumb => !thumb)}
+        aria-label="click to like post"
       >
         <ThumbUpIcon style={thumb ? ThumbUpButtonClicked : ThumbUpButton} />
       </button>
