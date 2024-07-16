@@ -80,42 +80,42 @@ export default function Post({
 
   return (
     <div style={PostStyle}>
-      <Grid container justifyContent="space-between" alignItems="center">
-        <Grid item style={PostHeaderLeft}>
-          <img src={avatar} style={PostProfilePic} alt="user avatar" />
-          <p style={PostUserName}>{username}</p>
-        </Grid>
-        {isPostOwner && (
-          <Grid item>
-            <button
-              style={DeleteButtonStyle}
-              alt="delete post"
-              onClick={handleDelete}
-            >
-              <DeleteOutlineIcon style={DeleteIconStyle} />
-            </button>
-          </Grid>
-        )}
+    <Grid container justifyContent="space-between" alignItems="center">
+      <Grid item style={PostHeaderLeft}>
+        <img src={avatar} style={PostProfilePic} alt="user avatar" />
+        <p style={PostUserName}>{username}</p>
       </Grid>
-      <div>
-        <img src={uploadURL} alt="" style={PostPhotoUrl} />
-      </div>
-      <div>
-        <p style={PostTextCaption}>{caption}</p>
-      </div>
-      {user && (
-        <Stack direction="row" spacing={1} justifyContent="center" alignItems="center" mt={3}>
-          <Grid container spacing={1}>
-            <Grid item xs={12} sm={12}>
-              <CommentInput key={1} id={id} comments={comments} fullWidth />
-            </Grid>
-          </Grid>
-        </Stack>
+      {isPostOwner && (
+        <Grid item>
+          <button
+            style={DeleteButtonStyle}
+            onClick={handleDelete}
+            aria-label="Delete post"
+          >
+            <DeleteOutlineIcon style={DeleteIconStyle} />
+          </button>
+        </Grid>
       )}
-      {comments &&
-        comments.map((comment, index) => (
-          <Comment key={index} username={comment.username} caption={comment.comment} />
-        ))}
+    </Grid>
+    <div>
+      <img src={uploadURL} alt="uploaded post" style={PostPhotoUrl} />
     </div>
+    <div>
+      <p style={PostTextCaption}>{caption}</p>
+    </div>
+    {user && (
+      <Stack direction="row" spacing={1} justifyContent="center" alignItems="center" mt={3}>
+        <Grid container spacing={1}>
+          <Grid item xs={12} sm={12}>
+            <CommentInput key={id} id={id} comments={comments} fullWidth aria-label="Add a comment" />
+          </Grid>
+        </Grid>
+      </Stack>
+    )}
+    {comments &&
+      comments.map((comment, index) => (
+        <Comment key={index} username={comment.username} caption={comment.comment} />
+      ))}
+  </div>
   );
 }
