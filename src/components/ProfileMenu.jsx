@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { UserContext } from '../contexts/user';
-import { Box, Avatar, Menu, MenuItem, IconButton, Tooltip } from '@mui/material';
+import { Box, Avatar, Menu, MenuItem, IconButton, Tooltip, Divider } from '@mui/material';
 import MenuButton from './MenuButton';
 import SignOutBtn from './SignOutBtn';
 
@@ -16,7 +16,7 @@ export default function ProfileMenu() {
   const [user] = useContext(UserContext).user;
 
   return (
-    <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
+    <Box sx={{ display: 'flex', alignItems: 'flex-start'}}>
       <Tooltip title="Account settings">
         <IconButton
           onClick={handleClick}
@@ -43,6 +43,7 @@ export default function ProfileMenu() {
             overflow: 'visible',
             filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
             mt: 1.5,
+            padding: 1,
             '& .MuiAvatar-root': {
               width: 32,
               height: 32,
@@ -57,6 +58,8 @@ export default function ProfileMenu() {
               right: 14,
               width: 10,
               height: 10,
+              bgcolor: "#101010",
+              border: "1px solid #fff",
               transform: 'translateY(-50%) rotate(45deg)',
               zIndex: 0,
             },
@@ -68,7 +71,10 @@ export default function ProfileMenu() {
           ".MuiList-root": {
             display: "flex",
             flexDirection: "column",
-            alignItems: "flex-start"
+            padding: 1
+          },
+          ".MuiButtonBase-root": {
+            justifyContent: "flex-start"
           }
         }}
       >
@@ -81,6 +87,7 @@ export default function ProfileMenu() {
         <MenuItem>
           <MenuButton text="My Posts" to="/posts" alt="User Posts" />
         </MenuItem>
+        <Divider sx={{ width: "100%", bgcolor: "#fff" }} />
         <MenuItem>
           <SignOutBtn />
         </MenuItem>
