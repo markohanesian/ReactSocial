@@ -1,26 +1,18 @@
 import React from "react";
 import { createStyles, Theme, makeStyles } from "@material-ui/core/styles";
-import {
-  Grid,
-  Typography,
-  CssBaseline,
-  Toolbar,
-  Link,
-} from "@material-ui/core/";
+import { Grid, CssBaseline, Toolbar } from "@material-ui/core/";
 import EmailIcon from "@material-ui/icons/Email";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import IconButton from "@material-ui/core/IconButton";
+import MenuButton from "./MenuButton";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    text: {
-      padding: theme.spacing(2, 2, 0),
-    },
     footer: {
       top: "auto",
       bottom: 0,
-      backgroundColor: "white",
-      marginTop: "2rem",
+      backgroundColor: "#262626",
+      height: "160px"
     },
     icon: {
       color: "black",
@@ -40,12 +32,12 @@ export default function FooterBar() {
       <Grid position="relative" color="primary" className={classes.footer}>
         <Toolbar>
           <div>
-            <Typography variant="body1" color="inherit" gutterBottom>
-              <Link alt="mark ohanesian's website" href="markohanesian.com">
-                {" "}
-                Mark Ohanesian
-              </Link>
-            </Typography>
+            <MenuButton
+              component="link"
+              text="Mark Ohanesian"
+              href="markohanesian.com"
+              alt="mark ohanesian's website" 
+            />
           </div>
           <div className={classes.grow} />
           <IconButton
