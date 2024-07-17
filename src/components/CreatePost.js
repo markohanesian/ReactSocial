@@ -147,17 +147,16 @@ export default function CreatePost() {
                   }}
                   aria-hidden="true"
                 />
-                  <input
-              style={{ display: "none" }}
-              id="file-input"
-              type="file"
-              accept="image/*"
-              onChange={handleChange}
-            />
+                <input
+                  style={{ display: "none" }}
+                  id="file-input"
+                  type="file"
+                  accept="image/*"
+                  onChange={handleChange}
+                />
               </Fab>
             </Tooltip>
 
-          
             <Button
               variant="contained"
               sx={{
