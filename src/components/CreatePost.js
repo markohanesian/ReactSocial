@@ -128,6 +128,7 @@ export default function CreatePost() {
           >
             <Tooltip title="Add Image" aria-label="add">
               <Fab
+                component="label"
                 sx={{
                   "&.MuiButtonBase-root": {
                     backgroundColor: "#fff",
@@ -138,9 +139,6 @@ export default function CreatePost() {
                   },
                 }}
               >
-                <label htmlFor="file-input" style={{ display: "none" }}>
-                  Add Image
-                </label>
                 <AddAPhotoIcon
                   sx={{
                     cursor: "pointer",
@@ -149,16 +147,17 @@ export default function CreatePost() {
                   }}
                   aria-hidden="true"
                 />
-              </Fab>
-            </Tooltip>
-
-            <input
+                  <input
               style={{ display: "none" }}
               id="file-input"
               type="file"
               accept="image/*"
               onChange={handleChange}
             />
+              </Fab>
+            </Tooltip>
+
+          
             <Button
               variant="contained"
               sx={{
