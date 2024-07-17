@@ -91,9 +91,9 @@ export default function CreatePost() {
             id="post-caption"
             style={{
               display: "flex",
-              backgroundColor: "transparent",
+              backgroundColor: "#262626",
               resize: "none",
-              margin: "1rem",
+              margin: "1rem 0 0 0",
               padding: ".5rem",
               fontWeight: "700",
               border: "none",
@@ -132,7 +132,7 @@ export default function CreatePost() {
                 sx={{
                   "&.MuiButtonBase-root": {
                     backgroundColor: "#fff",
-                    height: "56px",
+                    height: "36px",
                   },
                   "&:hover": {
                     backgroundColor: "rgb(139, 195, 74)",
@@ -163,7 +163,7 @@ export default function CreatePost() {
                 "&.MuiButtonBase-root": {
                   backgroundColor: "#fff",
                   color: "black",
-                  height: "56px",
+                  height: "36px",
                 },
                 "&:hover": {
                   backgroundColor: "rgb(139, 195, 74)",
