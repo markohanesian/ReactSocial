@@ -61,7 +61,6 @@ export default function CreatePost() {
               uploadURL: imageUrl,
               username: user.email.replace("@gmail.com", ""),
               avatar: user.photoURL,
-              // Ensure ownerEmail is set to user's email
               ownerEmail: user.email,
             });
             setCaption("");
