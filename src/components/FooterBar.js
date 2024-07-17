@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme: Theme) =>
       padding: "0px 8px"
     },
     icon: {
-      color: "black",
+      color: "#fff",
     },
     grow: {
       flexGrow: 1,
