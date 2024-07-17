@@ -12,7 +12,8 @@ const useStyles = makeStyles((theme: Theme) =>
       top: "auto",
       bottom: 0,
       backgroundColor: "#262626",
-      height: "160px"
+      height: "160px",
+      padding: "0px 8px"
     },
     icon: {
       color: "black",
