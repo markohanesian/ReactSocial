@@ -39,7 +39,7 @@ export default function UserPostsPage() {
   }
 
   return (
-    <div style={{ padding: "2rem", backgroundColor: "#101010", color: "white" }}>
+    <div style={{ padding: "2rem", backgroundColor: "#101010", color: "white", minHeight: "75vh" }}>
       <h1 style={{marginBottom: "2rem", fontSize: "2.5rem"}}>My Posts</h1>
       {posts.length > 0 ? (
         posts.map((post) => (
