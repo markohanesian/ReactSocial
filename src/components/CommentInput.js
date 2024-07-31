@@ -3,6 +3,7 @@ import { UserContext } from "../contexts/user";
 import { db } from "../firebase";
 import Liker from "./Liker";
 import { Stack, TextField, Button } from "@mui/material";
+import MenuButton from "./MenuButton";
 
 export default function CommentInput({ id, comments }) {
   const [user] = useContext(UserContext).user;
@@ -55,14 +56,12 @@ export default function CommentInput({ id, comments }) {
         alignItems="center"
         spacing={2}
       >
-        <Button
+        <MenuButton
           variant="contained"
           onClick={addComment}
-          sx={{ background: "rgb(139, 195, 74)", color: "black" }}
           aria-label="Post comment"
-        >
-          Post
-        </Button>
+          text="post"
+        />
         <Liker />
       </Stack>
     </Stack>
