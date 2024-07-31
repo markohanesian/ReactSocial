@@ -81,7 +81,7 @@ export default function CommentInput({ id, comments }) {
         <MenuButton
           variant="contained"
           onClick={addComment}
-          aria-label="Post comment"
+          alt="Post comment"
           text="post"
         />
         <Liker />
