@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 
 const ThumbUpButtonClicked = {
-  backgroundColor: 'rgb(115, 250, 179)',
+  backgroundColor: 'rgb(139, 195, 74)',
   order: 'none',
   padding: '6px',
   borderRadius: '50px',
