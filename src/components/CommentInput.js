@@ -47,8 +47,30 @@ export default function CommentInput({ id, comments }) {
         fullWidth
         value={comment}
         onChange={(e) => setComment(e.target.value)}
-        sx={{ flex: 1 }}
         label="Comment"
+        InputProps={{
+          sx: {
+            color: "#fff", // Text color
+          },
+        }}
+        InputLabelProps={{
+          sx: {
+            color: "#fff", // input placeholder text 
+            "&.Mui-focused": {
+              color: "rgb(139, 195, 74)", // Focused label 
+            },
+          },
+        }}
+        sx={{
+          flex: 1,
+          display: "flex",
+          backgroundColor: "#262626",
+          "& .MuiOutlinedInput-root": {
+            "&.Mui-focused fieldset": {
+              borderColor: "rgb(139, 195, 74)"
+            }
+          }
+        }}
       />
       <Stack
         direction="row"
