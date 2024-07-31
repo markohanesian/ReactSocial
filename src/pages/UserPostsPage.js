@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../contexts/user";
 import { db } from "../firebase"; 
 import { collection, query, where, getDocs } from "firebase/firestore";
+import { Link } from "react-router-dom";
 
 export default function UserPostsPage() {
   const [posts, setPosts] = useState([]);
@@ -17,7 +18,6 @@ export default function UserPostsPage() {
 
       try {
         const q = query(collection(db, "posts"), where("ownerEmail", "==", user[0].email));
-        console.log("Firestore Query:", q); 
         const querySnapshot = await getDocs(q);
         const userPosts = querySnapshot.docs.map((doc) => ({
           id: doc.id,
@@ -46,9 +46,9 @@ export default function UserPostsPage() {
           <div key={post.id} style={{ marginBottom: "1rem" }}>
             <h2>{post.caption}</h2>
             <p>{new Date(post.timestamp.toDate()).toLocaleString()}</p>
-            <a href={post.uploadURL} style={{ color: "rgb(139, 195, 74)" }}>
+            <Link to={`/feed?postId=${post.id}`} style={{ color: "rgb(139, 195, 74)" }}>
               View Post
-            </a>
+            </Link>
           </div>
         ))
       ) : (
