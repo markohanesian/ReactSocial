@@ -7,6 +7,7 @@ import AboutPage from "./pages/AboutPage";
 import UserPostsPage from "./pages/UserPostsPage";
 import SignedOut from "./components/SignedOut";
 import { UserContextProvider } from "./contexts/user";
+import FeedPage from "./pages/FeedPage";
 
 const appStyle = {
   display: "flex",
@@ -28,6 +29,9 @@ export default function App() {
             </Route>
             <Route path="/posts">
               <UserPostsPage />
+            </Route>
+            <Route path="/feed">
+              <FeedPage />
             </Route>
             <Route path="/">
               <HomePage />
