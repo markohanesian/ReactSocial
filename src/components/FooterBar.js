@@ -13,10 +13,14 @@ const useStyles = makeStyles((theme: Theme) =>
       bottom: 0,
       backgroundColor: "#262626",
       height: "160px",
-      padding: "0px 8px"
+      padding: "0px 8px",
     },
     icon: {
       color: "#fff",
+      "&:hover": {
+        backgroundColor: "rgb(139, 195, 74)",
+        color: "black"
+      },
     },
     grow: {
       flexGrow: 1,
@@ -37,7 +41,7 @@ export default function FooterBar() {
               component="link"
               text="Mark Ohanesian"
               href="markohanesian.com"
-              alt="mark ohanesian's website" 
+              alt="mark ohanesian's website"
             />
           </div>
           <div className={classes.grow} />
@@ -55,6 +59,11 @@ export default function FooterBar() {
             href="mailto:mso872@gmail.com"
             role="link"
             aria-label="Send email to Mark Ohanesian"
+            sx={{
+              ":hover": {
+                color: "rgb(139, 195, 74)",
+              },
+            }}
           >
             <EmailIcon alt="Email link" />
           </IconButton>
