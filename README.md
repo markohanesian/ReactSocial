@@ -43,6 +43,7 @@ Building ReactSocial involved several major steps. Initially, I set up the React
 * [Mark Ohanesian](https://github.com/markohanesian) 
 
 ## Acknowledgments
+* [bananafishbird](https://github.com/bananafishbird) for the great QA 
 * [Sanskar Tiwari](https://www.youtube.com/channel/UCsPdgUIoOBTBI1UmulW1pdw) for the awesome tutorial on creating social media components in react
 * [Catilac](https://gist.github.com/catilac) for the helpful code review
 
