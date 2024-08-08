@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { UserContext } from "../contexts/user";
-import { Fab, Tooltip, Button, Box, CircularProgress } from "@mui/material";
+import { Fab, Tooltip, Button, Box, CircularProgress, TextField } from "@mui/material";
 import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
 import { db, storage } from "../firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
@@ -87,18 +87,19 @@ export default function CreatePost() {
           <label htmlFor="post-caption" style={{ display: "none" }}>
             Write here to post to the feed
           </label>
-          <textarea
+          <TextField
             id="post-caption"
-            style={{
+            multiline
+            fullWidth
+            sx={{
               display: "flex",
               backgroundColor: "#262626",
-              resize: "none",
-              margin: "1rem 0 0 0",
-              padding: ".5rem",
-              fontWeight: "700",
-              border: "none",
-              color: "#fff",
-              width: "100%",
+              "& .MuiOutlinedInput-root": {
+                "&.Mui-focused fieldset": {
+                  borderColor: "rgb(139, 195, 74)"
+                },
+                color: "#fff",
+              }
             }}
             rows="3"
             placeholder="Write something to post to the feed, and add an image if you have one to share..."
