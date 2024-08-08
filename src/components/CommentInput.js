@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { UserContext } from "../contexts/user";
 import { db } from "../firebase";
+import { doc, updateDoc } from "firebase/firestore"; 
 import Liker from "./Liker";
 import { Stack, TextField } from "@mui/material";
 import MenuButton from "./MenuButton";
@@ -10,27 +11,26 @@ export default function CommentInput({ id, comments }) {
   const [comment, setComment] = useState("");
   const [commentArray] = useState(comments ? comments : []);
 
-  const addComment = () => {
+  const addComment = async () => {
     if (comment !== "") {
       // Add comment to local array
-      commentArray.push({
+      const newComment = {
         comment: comment,
         username: user.email.replace("@gmail.com", ""),
-      });
+      };
+      const updatedComments = [...commentArray, newComment];
 
       // Update comment in Firestore
-      db.collection("posts")
-        .doc(id)
-        .update({
-          comments: commentArray,
-        })
-        .then(function () {
-          setComment("");
-          console.log("Comment added!");
-        })
-        .catch(function (error) {
-          console.error("Error adding comment: ", error);
+      const postRef = doc(db, "posts", id); // Use doc to reference the specific post
+      try {
+        await updateDoc(postRef, {
+          comments: updatedComments,
         });
+        setComment("");
+        console.log("Comment added!");
+      } catch (error) {
+        console.error("Error adding comment: ", error);
+      }
     }
   };
 
