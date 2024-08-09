@@ -39,7 +39,8 @@ const PostPhotoUrl = {
 };
 
 const PostTextCaption = {
-  color: "white"
+  color: "white",
+  whiteSpace: "pre-wrap", 
 };
 
 const DeleteButtonStyle = {
