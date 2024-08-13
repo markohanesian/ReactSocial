@@ -3,6 +3,7 @@ import { UserContext } from "../contexts/user";
 import { db } from "../firebase"; 
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { Link } from "react-router-dom";
+import Weather from "../components/Weather";
 
 export default function UserPostsPage() {
   const [posts, setPosts] = useState([]);
@@ -41,6 +42,7 @@ export default function UserPostsPage() {
   return (
     <div style={{ padding: "2rem", backgroundColor: "#101010", color: "white", minHeight: "75vh" }}>
       <h1 style={{marginBottom: "2rem", fontSize: "2.5rem"}}>My Posts</h1>
+      <Weather />
       {posts.length > 0 ? (
         posts.map((post) => (
           <div key={post.id} style={{ marginBottom: "1rem" }}>
