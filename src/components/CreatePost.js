@@ -28,8 +28,8 @@ export default function CreatePost() {
   const handleChange = (e) => {
     if (e.target.files[0]) {
       setImage(e.target.files[0]);
-      var selectedImageSrc = URL.createObjectURL(e.target.files[0]);
-      var imagePreview = document.getElementById("image-preview");
+      const selectedImageSrc = URL.createObjectURL(e.target.files[0]);
+      const imagePreview = document.getElementById("image-preview");
       imagePreview.src = selectedImageSrc;
       imagePreview.style.display = "block";
     }
@@ -44,7 +44,7 @@ export default function CreatePost() {
     setLoading(true);
 
     if (image) {
-      var imageName = makeId(10);
+      const imageName = makeId(10);
       const imageRef = ref(storage, `images/${imageName}.jpg`);
       const uploadTask = uploadBytesResumable(imageRef, image);
 
@@ -86,7 +86,11 @@ export default function CreatePost() {
     setCaption("");
     setProgress(0);
     setImage(null);
-    document.getElementById("image-preview").style.display = "none";
+    const imagePreview = document.getElementById("image-preview");
+    if (imagePreview) {
+      imagePreview.style.display = "none";
+      imagePreview.src = ""; // Clear the src to avoid broken image
+    }
     setLoading(false);
   };
 
@@ -129,11 +133,13 @@ export default function CreatePost() {
             justifyContent="center"
             sx={{ marginBottom: "1rem", width: "100%" }}
           >
-            <img
-              style={{ display: "none", height: "8rem" }}
-              id="image-preview"
-              alt="preview"
-            />
+            {image && (
+              <img
+                style={{ height: "8rem" }}
+                id="image-preview"
+                alt="preview"
+              />
+            )}
           </Box>
           <Box
             component="section"

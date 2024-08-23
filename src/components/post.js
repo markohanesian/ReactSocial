@@ -98,9 +98,9 @@ export default function Post({
         </Grid>
       )}
     </Grid>
-    <div>
+    {uploadURL && (<div>
       <img src={uploadURL} alt="uploaded post" style={PostPhotoUrl} />
-    </div>
+    </div>)}
     <div>
       <p style={PostTextCaption}>{caption}</p>
     </div>
