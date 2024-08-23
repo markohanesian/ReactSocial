@@ -36,8 +36,14 @@ export default function CreatePost() {
   };
 
   const handleUpload = () => {
+    if (!caption.trim()) {
+      alert("Caption cannot be empty");
+      return;
+    }
+
+    setLoading(true);
+
     if (image) {
-      setLoading(true);
       var imageName = makeId(10);
       const imageRef = ref(storage, `images/${imageName}.jpg`);
       const uploadTask = uploadBytesResumable(imageRef, image);
@@ -55,23 +61,33 @@ export default function CreatePost() {
         },
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then((imageUrl) => {
-            addDoc(collection(db, "posts"), {
-              timestamp: serverTimestamp(),
-              caption: caption,
-              uploadURL: imageUrl,
-              username: user.email.replace("@gmail.com", ""),
-              avatar: user.photoURL,
-              ownerEmail: user.email,
-            });
-            setCaption("");
-            setProgress(0);
-            setImage(null);
-            document.getElementById("image-preview").style.display = "none";
-            setLoading(false);
+            createPost(caption, imageUrl);
           });
         }
       );
+    } else {
+      createPost(caption, null);
     }
+  };
+
+  const createPost = (caption, imageUrl) => {
+    addDoc(collection(db, "posts"), {
+      timestamp: serverTimestamp(),
+      caption: caption,
+      uploadURL: imageUrl,
+      username: user.email.replace("@gmail.com", ""),
+      avatar: user.photoURL,
+      ownerEmail: user.email,
+    });
+    resetForm();
+  };
+
+  const resetForm = () => {
+    setCaption("");
+    setProgress(0);
+    setImage(null);
+    document.getElementById("image-preview").style.display = "none";
+    setLoading(false);
   };
 
   return (
