@@ -1,6 +1,13 @@
 import React, { useContext, useState } from "react";
 import { UserContext } from "../contexts/user";
-import { Fab, Tooltip, Button, Box, CircularProgress, TextField } from "@mui/material";
+import {
+  Fab,
+  Tooltip,
+  Button,
+  Box,
+  CircularProgress,
+  TextField,
+} from "@mui/material";
 import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
 import { db, storage } from "../firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
@@ -116,10 +123,10 @@ export default function CreatePost() {
               backgroundColor: "#262626",
               "& .MuiOutlinedInput-root": {
                 "&.Mui-focused fieldset": {
-                  borderColor: "rgb(139, 195, 74)"
+                  borderColor: "rgb(139, 195, 74)",
                 },
                 color: "#fff",
-              }
+              },
             }}
             rows="3"
             placeholder="Write something to post to the feed, and add an image if you have one to share..."
