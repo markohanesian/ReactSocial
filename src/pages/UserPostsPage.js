@@ -45,7 +45,8 @@ export default function UserPostsPage() {
       <Weather />
       {posts.length > 0 ? (
         posts.map((post) => (
-          <div key={post.id} style={{ marginBottom: "1rem" }}>
+          <div key={post.id} style={{ margin: "3rem 0" }}>
+            <img src={post.uploadURL} alt="uploaded post" style={{width: "50px", height: "auto"}} />
             <h2>{post.caption}</h2>
             <p>{new Date(post.timestamp.toDate()).toLocaleString()}</p>
             <Link to={`/feed?postId=${post.id}`} style={{ color: "rgb(139, 195, 74)" }}>
