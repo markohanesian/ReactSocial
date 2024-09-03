@@ -22,11 +22,13 @@ Building ReactSocial involved several major steps. Initially, I set up the React
 * React-Router
 * Material-Ui
 
-## Planned Features/Outstanding Issues
+## Features + Issues
 
+🚀 = New 
 ✅ = fixed
 🚧 = in progress
 
+* User posts page items now have thumbnail preview 🚀
 * Posts can't be made unless with a picture ✅
 * Posts can't be made with line breaks ✅
 * Comments not working ✅
