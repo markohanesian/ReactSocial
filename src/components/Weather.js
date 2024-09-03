@@ -29,6 +29,6 @@ export default function Weather() {
     }, []); // Empty dependency array means this effect runs once when the component mounts
 
     return (
-        <div style={{margin: "1rem"}}>Current weather in Los Angeles: <strong>{result}</strong></div>
+        <div>Current weather in Los Angeles: <strong>{result}</strong></div>
     );
 }
