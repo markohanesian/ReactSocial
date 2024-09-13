@@ -1,5 +1,5 @@
 # ReactSocial
-![ReactSocial preview image](/public/react-social-preview.png)
+![ReactSocial preview image](/public/Home.png)
 
 ## Links
 * [React Social](https://social-media-app-mso.web.app/)
