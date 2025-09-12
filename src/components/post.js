@@ -6,6 +6,7 @@ import { db } from "../firebase";
 import { doc, deleteDoc } from "firebase/firestore";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import { Grid, Stack } from "@mui/material";
+import LikeButton from "./LikeButton";
 
 const PostStyle = {
   padding: "1rem",
@@ -63,6 +64,8 @@ export default function Post({
   comments,
   onDelete,
   ownerEmail,
+  likeCount,
+  likedBy
 }) {
   const { user } = useContext(UserContext); 
   const userEmail = user && user.length > 0 ? user[0].email : null;
@@ -108,9 +111,10 @@ export default function Post({
       <Stack direction="row" spacing={1} justifyContent="center" alignItems="center" mt={3}>
         <Grid container spacing={1}>
           <Grid item xs={12} sm={12}>
-            <CommentInput key={id} id={id} comments={comments} fullWidth aria-label="Add a comment" />
+            <CommentInput id={id} comments={comments} />
           </Grid>
         </Grid>
+        <LikeButton post={{ id, likeCount, likedBy }} />
       </Stack>
     )}
     {comments &&

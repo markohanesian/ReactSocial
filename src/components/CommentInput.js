@@ -2,7 +2,6 @@ import React, { useContext, useState } from "react";
 import { UserContext } from "../contexts/user";
 import { db } from "../firebase";
 import { doc, updateDoc } from "firebase/firestore"; 
-import Liker from "./Liker";
 import { Stack, TextField } from "@mui/material";
 import MenuButton from "./MenuButton";
 
@@ -84,7 +83,6 @@ export default function CommentInput({ id, comments }) {
           alt="Post comment"
           text="post"
         />
-        <Liker />
       </Stack>
     </Stack>
   );
