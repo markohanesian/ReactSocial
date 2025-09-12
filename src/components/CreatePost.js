@@ -85,6 +85,8 @@ export default function CreatePost() {
       username: user.email.replace("@gmail.com", ""),
       avatar: user.photoURL,
       ownerEmail: user.email,
+      likeCount: 0,
+      likedBy: []
     });
     resetForm();
   };
