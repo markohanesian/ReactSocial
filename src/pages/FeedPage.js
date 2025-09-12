@@ -79,13 +79,8 @@ export default function FeedPage() {
         <Post
           key={id}
           id={id}
-          avatar={post.avatar}
-          username={post.username}
-          uploadURL={post.uploadURL}
-          caption={post.caption}
-          comments={post.comments}
           onDelete={handleDeletePost}
-          ownerEmail={ownerEmail} 
+          {...post} // <-- This is the magic!
         />
       ))}
     </div>
