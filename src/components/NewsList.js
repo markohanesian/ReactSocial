@@ -9,7 +9,8 @@ export default function NewsList() {
 
     useEffect(() => {
         const getArticles = async () => {
-            const res = await axios.get("https://newsapi.org/v2/top-headlines?country=us&apiKey=701157776827481988e23accca272ebc");
+            const apiKey = process.env.REACT_APP_NEWS_API_KEY;
+            const res = await axios.get(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`);
             // show retrieved data in console
             setArticles(res.data.articles);
             console.log(res)
