@@ -80,7 +80,7 @@ export default function FeedPage() {
           key={id}
           id={id}
           onDelete={handleDeletePost}
-          {...post} // <-- This is the magic!
+          {...post}
         />
       ))}
     </div>
